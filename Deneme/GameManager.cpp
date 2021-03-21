@@ -7,18 +7,21 @@ sf::Font font;
 GameManager::GameManager()
 {
 	m_shape.setRadius(30.0f);
-	m_shape.setFillColor(sf::Color::Magenta);
+	m_shape.setFillColor(sf::Color::Cyan);
+	m_shape.setOutlineColor(sf::Color::White);
+	m_shape.setOutlineThickness(2.0f);
 	m_incVal = 1.0f;
 	m_posX = 10.0f;
 	m_frameRate = 1.0f / 60.0f;
 
-	/*if (font.loadFromFile("piksel.ttf") != false)
+	if (font.loadFromFile("piksel.ttf") != false)
 	{
 		button.Font(font);
-	}*/
+	}
 	button.Size(200, 50);
-	//button.Text("New Game");
+	button.Text("New Game");
 	button.Color(sf::Color::Magenta);
+	button.OutlineColor(sf::Color::White);
 	button.Position(340, 400);
 }
 

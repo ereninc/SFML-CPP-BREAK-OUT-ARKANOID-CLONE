@@ -7,6 +7,7 @@ public:
 	Button();
 	void Text(sf::String text);
 	void Color(sf::Color color);
+	void OutlineColor(sf::Color outlineColor);
 	void Font(sf::Font& font);
 	void Draw(sf::RenderWindow& window);
 	void Size(float width, float height);

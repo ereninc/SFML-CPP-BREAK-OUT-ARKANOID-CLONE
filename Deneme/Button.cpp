@@ -22,6 +22,12 @@ void Button::Color(sf::Color color)
 	m_backGround.setFillColor(color);
 }
 
+void Button::OutlineColor(sf::Color outlineColor)
+{
+	m_backGround.setOutlineThickness(2.0f);
+	m_backGround.setOutlineColor(outlineColor);
+}
+
 void Button::Font(sf::Font& font)
 {
 	m_text.setFont(font);
