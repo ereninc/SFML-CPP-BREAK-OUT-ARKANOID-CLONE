@@ -1,4 +1,5 @@
 #include "Button.hpp"
+#include <iostream>
 
 Button::Button()
 {
@@ -52,4 +53,36 @@ void Button::Position(float x, float y)
 	m_text.setPosition(x + textX + 10, y);
 
 	m_backGround.setPosition(sf::Vector2f(x, y));
+}
+
+void Button::MouseMove(int x, int y)
+{
+	std::cout << x << " , " << y << std::endl;
+	m_backGround.setFillColor(sf::Color::Cyan);
+}
+
+void Button::MouseOnEnable(sf::Event::MouseButtonEvent btnEvent)
+{
+	std::cout << "Clicked!" << std::endl;
+}
+
+void Button::MouseOnDisable(sf::Event::MouseButtonEvent btnEvent)
+{
+	std::cout << "Click stopped!" << std::endl;
+}
+
+bool Button::isOn(int x, int y)
+{
+	auto pos = m_backGround.getPosition();
+	auto size = m_backGround.getSize();
+	if (pos.x <= x && pos.x + size.x >= x && pos.y <= y && pos.y + size.y >= y)
+	{
+		return true;
+	}
+	return false;
+}
+
+void Button::isNotOn()
+{
+	m_backGround.setFillColor(sf::Color::Magenta);
 }

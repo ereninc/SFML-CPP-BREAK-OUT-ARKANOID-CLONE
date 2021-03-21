@@ -23,6 +23,7 @@ GameManager::GameManager()
 	button.Color(sf::Color::Magenta);
 	button.OutlineColor(sf::Color::White);
 	button.Position(340, 400);
+	m_window.AddMember(&button);
 }
 
 GameManager::~GameManager()

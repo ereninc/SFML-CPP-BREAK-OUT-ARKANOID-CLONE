@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "WindowInterface.hpp"
 
-class Button
+class Button: public WindowInterface
 {
 public:
 	Button();
@@ -15,4 +16,13 @@ public:
 private:
 	sf::RectangleShape m_backGround;
 	sf::Text m_text;
+
+	// Inherited via WindowInterface
+	virtual void MouseMove(int x, int y) override;
+	virtual void MouseOnEnable(sf::Event::MouseButtonEvent btnEvent) override;
+	virtual void MouseOnDisable(sf::Event::MouseButtonEvent btnEvent) override;
+	virtual bool isOn(int x, int y) override;
+
+	// Inherited via WindowInterface
+	virtual void isNotOn() override;
 };
