@@ -46,3 +46,8 @@ void Window::Draw(sf::Drawable& shape)
 {
 	m_sfmlWindow.draw(shape);
 }
+
+sf::RenderWindow& Window::getWindow()
+{
+	return m_window;
+}

@@ -1,4 +1,8 @@
 #include "GameManager.hpp"
+#include "Button.hpp"
+
+Button button;
+sf::Font font;
 
 GameManager::GameManager()
 {
@@ -7,6 +11,15 @@ GameManager::GameManager()
 	m_incVal = 1.0f;
 	m_posX = 10.0f;
 	m_frameRate = 1.0f / 60.0f;
+
+	/*if (font.loadFromFile("piksel.ttf") != false)
+	{
+		button.Font(font);
+	}*/
+	button.Size(200, 50);
+	//button.Text("New Game");
+	button.Color(sf::Color::Magenta);
+	button.Position(340, 400);
 }
 
 GameManager::~GameManager()
@@ -40,6 +53,7 @@ void GameManager::DrawScene()
 {
 	m_window.StartDrawing();
 	m_window.Draw(m_shape);
+	button.Draw(m_window.getWindow());
 	m_window.EndDrawing();
 }
 

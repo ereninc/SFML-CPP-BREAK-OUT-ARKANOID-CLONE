@@ -1,4 +1,4 @@
 ﻿  GameManager.cpp
   Window.cpp
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(52,9): error C2065: 'm_window': undeclared identifier
   Generating Code...
-  Deneme.vcxproj -> C:\Users\ASUS\Desktop\SFML Programming\Dependencies\bin\Deneme.exe

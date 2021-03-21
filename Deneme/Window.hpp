@@ -12,4 +12,5 @@ public:
 	void EventControl();
 	void Draw(sf::Drawable& shape);
 	sf::RenderWindow m_sfmlWindow;
+	sf::RenderWindow& getWindow();
 };
