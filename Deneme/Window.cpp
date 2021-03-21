@@ -8,32 +8,32 @@ Window::Window()
 
 void Window::SetWindow(unsigned int width, unsigned int height, sf::String title)
 {
-	m_window.create(sf::VideoMode(width, height), title);
+	m_sfmlWindow.create(sf::VideoMode(width, height), title);
 }
 
 void Window::StartDrawing()
 {
-	m_window.clear();
+	m_sfmlWindow.clear();
 }
 
 void Window::EndDrawing()
 {
-	m_window.display();
+	m_sfmlWindow.display();
 }
 
 bool Window::isClosed()
 {
-	return !m_window.isOpen();
+	return !m_sfmlWindow.isOpen();
 }
 
 void Window::EventControl()
 {
 	sf::Event event;
-	while (m_window.pollEvent(event))
+	while (m_sfmlWindow.pollEvent(event))
 	{
 		if (event.type == sf::Event::Closed)
 		{
-			m_window.close();
+			m_sfmlWindow.close();
 		}
 		if (event.type == sf::Event::MouseMoved)
 		{
@@ -44,5 +44,5 @@ void Window::EventControl()
 
 void Window::Draw(sf::Drawable& shape)
 {
-	m_window.draw(shape);
+	m_sfmlWindow.draw(shape);
 }

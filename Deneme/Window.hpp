@@ -1,5 +1,6 @@
 #pragma once
 #include<SFML/Graphics.hpp>
+
 class Window
 {
 public:
@@ -10,6 +11,5 @@ public:
 	bool isClosed();
 	void EventControl();
 	void Draw(sf::Drawable& shape);
-private:
-	sf::RenderWindow m_window;
+	sf::RenderWindow m_sfmlWindow;
 };
