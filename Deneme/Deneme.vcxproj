@@ -150,9 +150,11 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.hpp" />
+    <ClInclude Include="EventHandler.hpp" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="Window.hpp" />
     <ClInclude Include="WindowInterface.hpp" />

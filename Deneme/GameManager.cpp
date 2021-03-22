@@ -1,7 +1,7 @@
 #include "GameManager.hpp"
 #include "Button.hpp"
+#include <iostream>
 
-Button button;
 sf::Font font;
 
 GameManager::GameManager()
@@ -13,17 +13,7 @@ GameManager::GameManager()
 	m_incVal = 1.0f;
 	m_posX = 10.0f;
 	m_frameRate = 1.0f / 60.0f;
-
-	if (font.loadFromFile("piksel.ttf") != false)
-	{
-		button.Font(font);
-	}
-	button.Size(200, 50);
-	button.Text("New Game");
-	button.Color(sf::Color::Magenta);
-	button.OutlineColor(sf::Color::White);
-	button.Position(340, 400);
-	m_window.AddMember(&button);
+	MenuSet();	
 }
 
 GameManager::~GameManager()
@@ -56,8 +46,8 @@ void GameManager::UpdateScene()
 void GameManager::DrawScene()
 {
 	m_window.StartDrawing();
-	m_window.Draw(m_shape);
-	button.Draw(m_window.getWindow());
+	//m_window.Draw(m_shape);
+	MenuDraw();
 	m_window.EndDrawing();
 }
 
@@ -69,4 +59,50 @@ void GameManager::RestartClock()
 bool GameManager::isFinished()
 {
 	return m_window.isClosed();
+}
+
+void GameManager::Click()
+{
+	std::cout << "Method called" << std::endl;
+}
+
+void GameManager::NewGameButton()
+{
+	std::cout << "Game will start in 3.. 2.. 1!" << std::endl;
+}
+
+void GameManager::QuitGameButton()
+{
+	std::cout << "Thanks for not playing." << std::endl;
+	exit(0); 
+}
+
+void GameManager::MenuSet()
+{
+	if (font.loadFromFile("piksel.ttf") != false)
+	{
+		m_newGameButton.Font(font);
+		m_quitButton.Font(font);
+	}
+	m_newGameButton.Text("New Game");
+	m_newGameButton.Color(sf::Color::Magenta);
+	m_newGameButton.OutlineColor(sf::Color::White); 
+	m_newGameButton.Position(340, 400);
+	m_window.AddMember(&m_newGameButton);
+	auto startFunction = std::bind(&GameManager::NewGameButton, this);
+	m_newGameButton.AddFunction(startFunction);
+
+	m_quitButton.Text("Quit");
+	m_quitButton.Color(sf::Color::Magenta);
+	m_quitButton.OutlineColor(sf::Color::White);
+	m_quitButton.Position(375, 480);
+	m_window.AddMember(&m_quitButton);
+	auto exitFunction = std::bind(&GameManager::QuitGameButton, this);
+	m_quitButton.AddFunction(exitFunction);
+}
+
+void GameManager::MenuDraw()
+{
+	m_newGameButton.Draw(m_window.getWindow());
+	m_quitButton.Draw(m_window.getWindow());
 }

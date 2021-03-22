@@ -42,17 +42,27 @@ void Button::Draw(sf::RenderWindow& window)
 
 void Button::Size(float width, float height)
 {
-	m_backGround.setSize(sf::Vector2f(width, height));
+	if (m_text.getLocalBounds().width < width)
+	{
+		m_size = sf::Vector2f(width, height);
+		m_backGround.setSize(m_size);
+	}
 }
 
 void Button::Position(float x, float y)
 {
+	m_position = sf::Vector2f(x, y);
 	auto textSize = m_text.getLocalBounds();
 	float textX = abs(textSize.left);
-	float textY = textSize.top;
-	m_text.setPosition(x + textX + 10, y);
+	float deltaX = (m_size.x - textSize.width) / 2.0f;
+	m_text.setPosition(x + textX + deltaX, y);
+	m_backGround.setPosition(m_position);
+}
 
-	m_backGround.setPosition(sf::Vector2f(x, y));
+sf::Vector2f Button::GetSize()
+{
+	return m_size;
+	return sf::Vector2f();
 }
 
 void Button::MouseMove(int x, int y)
@@ -63,12 +73,15 @@ void Button::MouseMove(int x, int y)
 
 void Button::MouseOnEnable(sf::Event::MouseButtonEvent btnEvent)
 {
+	WindowInterface::MouseOnEnable(btnEvent);
+	m_backGround.setFillColor(sf::Color::Cyan);
 	std::cout << "Clicked!" << std::endl;
 }
 
 void Button::MouseOnDisable(sf::Event::MouseButtonEvent btnEvent)
 {
-	std::cout << "Click stopped!" << std::endl;
+	//std::cout << "Click stopped!" << std::endl;
+	isNotOn();
 }
 
 bool Button::isOn(int x, int y)
