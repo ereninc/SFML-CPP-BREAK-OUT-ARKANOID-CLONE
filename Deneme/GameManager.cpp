@@ -6,6 +6,13 @@ sf::Font font;
 
 GameManager::GameManager()
 {
+	m_isClosed = false;
+	m_isNewGameClicked = false;
+
+	auto size = m_window.getWindow().getSize();
+	m_cellSize = 20.0f;
+	m_scene.CreateScene(size.x, size.y, m_cellSize);
+
 	m_shape.setRadius(30.0f);
 	m_shape.setFillColor(sf::Color::Cyan);
 	m_shape.setOutlineColor(sf::Color::White);
@@ -13,6 +20,7 @@ GameManager::GameManager()
 	m_incVal = 1.0f;
 	m_posX = 10.0f;
 	m_frameRate = 1.0f / 60.0f;
+
 	MenuSet();	
 }
 
@@ -46,8 +54,15 @@ void GameManager::UpdateScene()
 void GameManager::DrawScene()
 {
 	m_window.StartDrawing();
-	//m_window.Draw(m_shape);
-	MenuDraw();
+	m_window.Draw(m_shape);
+	if (m_isNewGameClicked)
+	{
+		m_scene.DrawScene(m_window.getWindow());
+	}
+	else
+	{
+		MenuDraw();
+	}
 	m_window.EndDrawing();
 }
 
@@ -58,6 +73,10 @@ void GameManager::RestartClock()
 
 bool GameManager::isFinished()
 {
+	if (m_isClosed)
+	{
+		return true;
+	}
 	return m_window.isClosed();
 }
 
@@ -69,11 +88,13 @@ void GameManager::Click()
 void GameManager::NewGameButton()
 {
 	std::cout << "Game will start in 3.. 2.. 1!" << std::endl;
+	m_isNewGameClicked = true;
 }
 
 void GameManager::QuitGameButton()
 {
 	std::cout << "Thanks for not playing." << std::endl;
+	m_isClosed = true;
 	exit(0); 
 }
 
@@ -84,10 +105,17 @@ void GameManager::MenuSet()
 		m_newGameButton.Font(font);
 		m_quitButton.Font(font);
 	}
+
+	auto sceneSize = m_window.getWindow().getSize();
+	auto buttonSize = sf::Vector2f(200, 50);
+	float x = (sceneSize.x - buttonSize.x) / 2.0f;
+	float y = (sceneSize.y - buttonSize.y) / 2.0f;
+
 	m_newGameButton.Text("New Game");
 	m_newGameButton.Color(sf::Color::Magenta);
-	m_newGameButton.OutlineColor(sf::Color::White); 
-	m_newGameButton.Position(340, 400);
+	m_newGameButton.OutlineColor(sf::Color::White);
+	m_newGameButton.Position(x+40, y);
+	//m_newGameButton.Position(340, 400);
 	m_window.AddMember(&m_newGameButton);
 	auto startFunction = std::bind(&GameManager::NewGameButton, this);
 	m_newGameButton.AddFunction(startFunction);
@@ -95,7 +123,7 @@ void GameManager::MenuSet()
 	m_quitButton.Text("Quit");
 	m_quitButton.Color(sf::Color::Magenta);
 	m_quitButton.OutlineColor(sf::Color::White);
-	m_quitButton.Position(375, 480);
+	m_quitButton.Position(x+75, y + 80);
 	m_window.AddMember(&m_quitButton);
 	auto exitFunction = std::bind(&GameManager::QuitGameButton, this);
 	m_quitButton.AddFunction(exitFunction);

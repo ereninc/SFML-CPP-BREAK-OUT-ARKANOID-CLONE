@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.hpp"
 #include "Button.hpp"
+#include "Scene.hpp"
 
 class GameManager
 {
@@ -17,8 +18,12 @@ public:
 	void QuitGameButton();
 	void MenuSet();
 	void MenuDraw();
+	Scene m_scene;
+	float m_cellSize;
 private:
 	Window m_window;
+	bool m_isClosed;
+	bool m_isNewGameClicked;
 	sf::Clock m_clock;
 	sf::Time m_deltaTime;
 	sf::CircleShape m_shape;

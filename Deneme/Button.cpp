@@ -42,11 +42,8 @@ void Button::Draw(sf::RenderWindow& window)
 
 void Button::Size(float width, float height)
 {
-	if (m_text.getLocalBounds().width < width)
-	{
-		m_size = sf::Vector2f(width, height);
-		m_backGround.setSize(m_size);
-	}
+	m_size = sf::Vector2f(width, height);
+	m_backGround.setSize(m_size);
 }
 
 void Button::Position(float x, float y)
@@ -54,15 +51,13 @@ void Button::Position(float x, float y)
 	m_position = sf::Vector2f(x, y);
 	auto textSize = m_text.getLocalBounds();
 	float textX = abs(textSize.left);
-	float deltaX = (m_size.x - textSize.width) / 2.0f;
-	m_text.setPosition(x + textX + deltaX, y);
+	m_text.setPosition(x + textX + 10, y);
 	m_backGround.setPosition(m_position);
 }
 
 sf::Vector2f Button::GetSize()
 {
-	return m_size;
-	return sf::Vector2f();
+	return sf::Vector2f(m_size);
 }
 
 void Button::MouseMove(int x, int y)
