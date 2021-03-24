@@ -89,7 +89,7 @@ void Window::EventControl()
 
 void Window::Draw(sf::Drawable& shape)
 {
-	m_sfmlWindow.draw(shape);
+	//m_sfmlWindow.draw(shape);
 }
 
 sf::RenderWindow& Window::getWindow()
