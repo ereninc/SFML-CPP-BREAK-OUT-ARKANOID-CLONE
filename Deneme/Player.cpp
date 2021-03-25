@@ -25,6 +25,15 @@ void Player::DrawPlayer(sf::RenderWindow& window)
 		m_playerShape.setPosition(playerPos.x + m_playerMoveVal, playerPos.y);
 		m_playerMoveVal = 0.0f;
 	}
+	//rezil bi fix oldu ***BURAYA DÖN GERÝ***
+	if (playerPos.x <= 0)
+	{
+		m_playerShape.setPosition(playerPos.x + 1.0f, playerPos.y);
+	}
+	if (playerPos.x + 120.0f >= screenSize.x)
+	{
+		m_playerShape.setPosition(playerPos.x - 1.0f, playerPos.y);
+	}
 }
 
 sf::Vector2f Player::GetSize()
