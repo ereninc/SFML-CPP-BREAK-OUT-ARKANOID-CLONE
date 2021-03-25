@@ -10,23 +10,23 @@ Scene::Scene()
 
 void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
 {
-	std::cout << "Scene is Creating" << std::endl;
+	std::cout << "Creating scene method." << std::endl;
 	m_columnCount = sceneWidth / cellSize;
 	m_lineCount = sceneHeight / cellSize;
 	m_cellSize = cellSize;
 	m_lineCell.setSize({ sceneWidth,1 });
 	m_columnCell.setSize({ 1,sceneHeight });
-	//InstantiateBricks();
 	m_brick.InstantiateBricks();
+	m_player.InstantiatePlayer();
 }
 
 void Scene::DrawScene(sf::RenderWindow& window)
 {	
-	std::cout << "Scene is Drawing" << std::endl;
-	sf::Vector2f pos;
-
+	std::cout << "Drawing the scene." << std::endl;
 	m_brick.BrickDraw(window);
-
+	m_player.DrawPlayer(window);
+	m_player.PlayerMovement();
+	/*sf::Vector2f pos;
 	for (int line = 0; line < m_lineCount; line++)
 	{
 		pos.x = 0;
@@ -40,5 +40,5 @@ void Scene::DrawScene(sf::RenderWindow& window)
 		pos.y = 0;
 		m_columnCell.setPosition(pos);
 		window.draw(m_columnCell);
-	}
+	}*/
 }

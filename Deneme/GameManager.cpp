@@ -8,11 +8,9 @@ GameManager::GameManager()
 {
 	m_isClosed = false;
 	m_isNewGameClicked = false;
-
 	auto size = m_window.getWindow().getSize();
 	m_cellSize = 20.0f;
 	m_scene.CreateScene(size.x, size.y, m_cellSize);
-
 	m_shape.setRadius(30.0f);
 	m_shape.setFillColor(sf::Color::Cyan);
 	m_shape.setOutlineColor(sf::Color::White);
@@ -114,8 +112,7 @@ void GameManager::MenuSet()
 	m_newGameButton.Text("New Game");
 	m_newGameButton.Color(sf::Color::Magenta);
 	m_newGameButton.OutlineColor(sf::Color::White);
-	m_newGameButton.Position(x+40, y);
-	//m_newGameButton.Position(340, 400);
+	m_newGameButton.Position(x + 40, y);
 	m_window.AddMember(&m_newGameButton);
 	auto startFunction = std::bind(&GameManager::NewGameButton, this);
 	m_newGameButton.AddFunction(startFunction);
@@ -123,7 +120,7 @@ void GameManager::MenuSet()
 	m_quitButton.Text("Quit");
 	m_quitButton.Color(sf::Color::Magenta);
 	m_quitButton.OutlineColor(sf::Color::White);
-	m_quitButton.Position(x+75, y + 80);
+	m_quitButton.Position(x + 75, y + 80);
 	m_window.AddMember(&m_quitButton);
 	auto exitFunction = std::bind(&GameManager::QuitGameButton, this);
 	m_quitButton.AddFunction(exitFunction);

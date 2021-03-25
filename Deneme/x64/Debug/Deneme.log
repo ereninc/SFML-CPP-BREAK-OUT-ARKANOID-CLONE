@@ -1,18 +1,2 @@
-﻿  Brick.cpp
-  GameManager.cpp
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\GameManager.cpp(14,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\GameManager.cpp(14,26): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-  Scene.cpp
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Scene.cpp(14,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Scene.cpp(15,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  main.cpp
-  Generating Code...
+﻿  Player.cpp
   Deneme.vcxproj -> C:\Users\ASUS\Desktop\SFML Programming\Dependencies\bin\Deneme.exe

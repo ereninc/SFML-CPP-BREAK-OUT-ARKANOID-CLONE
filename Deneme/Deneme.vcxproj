@@ -150,6 +150,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowInterface.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="EventHandler.hpp" />
     <ClInclude Include="GameManager.hpp" />
+    <ClInclude Include="Player.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="Window.hpp" />
     <ClInclude Include="WindowInterface.hpp" />
