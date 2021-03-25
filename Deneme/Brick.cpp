@@ -2,7 +2,6 @@
 
 Brick::Brick()
 {
-
 }
 
 void Brick::InstantiateBricks()

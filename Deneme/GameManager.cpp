@@ -18,7 +18,6 @@ GameManager::GameManager()
 	m_incVal = 1.0f;
 	m_posX = 10.0f;
 	m_frameRate = 1.0f / 60.0f;
-
 	MenuSet();	
 }
 

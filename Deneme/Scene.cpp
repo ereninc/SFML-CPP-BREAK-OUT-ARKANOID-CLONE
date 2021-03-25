@@ -26,6 +26,8 @@ void Scene::DrawScene(sf::RenderWindow& window)
 	m_brick.BrickDraw(window);
 	m_player.DrawPlayer(window);
 	m_player.PlayerMovement();
+
+	//GRID
 	/*sf::Vector2f pos;
 	for (int line = 0; line < m_lineCount; line++)
 	{
