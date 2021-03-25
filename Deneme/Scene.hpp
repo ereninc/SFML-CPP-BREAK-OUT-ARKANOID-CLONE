@@ -2,6 +2,7 @@
 #include<vector>
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
+#include "Brick.hpp"
 
 class Scene 
 {
@@ -9,13 +10,12 @@ public:
 	Scene();
 	void CreateScene(float sceneWidth, float sceneHeight, float cellSize);
 	void DrawScene(sf::RenderWindow& window);
-	void InstantiateBricks();
-	sf::Vector2f brickPos();
+	Brick m_brick;
 private:
 	int m_lineCount;
 	int m_columnCount;
 	float m_cellSize;
 	sf::RectangleShape m_lineCell;
 	sf::RectangleShape m_columnCell;
-	sf::RectangleShape m_brick;
+	sf::RectangleShape m_brickShape;
 };
