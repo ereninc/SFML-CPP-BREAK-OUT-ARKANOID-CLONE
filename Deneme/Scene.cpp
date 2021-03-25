@@ -23,7 +23,7 @@ void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
 
 void Scene::DrawScene(sf::RenderWindow& window)
 {	
-	std::cout << "Drawing the scene." << std::endl;
+	//std::cout << "Drawing the scene." << std::endl;
 	m_brick.BrickDraw(window);
 	m_player.DrawPlayer(window);
 	m_player.PlayerMovement();

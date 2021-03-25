@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include <iostream>
 
 Player::Player()
 {
@@ -16,9 +17,14 @@ void Player::InstantiatePlayer()
 
 void Player::DrawPlayer(sf::RenderWindow& window)
 {
-	auto m_playerPos = m_playerShape.getPosition();
 	window.draw(m_playerShape);
-	m_playerShape.setPosition(m_playerPos.x + m_playerMoveVal, m_playerPos.y);
+	auto playerPos = m_playerShape.getPosition();
+	auto screenSize = m_window.getWindow().getSize();
+	if (playerPos.x + 120.0f <= screenSize.x && playerPos.x >= 0)
+	{
+		m_playerShape.setPosition(playerPos.x + m_playerMoveVal, playerPos.y);
+		m_playerMoveVal = 0.0f;
+	}
 }
 
 sf::Vector2f Player::GetSize()
@@ -35,9 +41,5 @@ void Player::PlayerMovement()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		m_playerMoveVal = -1.0f;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-	{
-		m_playerMoveVal = 0.0f;
 	}
 }

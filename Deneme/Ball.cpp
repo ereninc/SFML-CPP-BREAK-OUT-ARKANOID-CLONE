@@ -7,8 +7,6 @@ Ball::Ball()
 void Ball::SetBall()
 {
 	m_ball.setFillColor(sf::Color::Red);
-	m_ball.setOutlineColor(sf::Color::White);
-	m_ball.setOutlineThickness(1.0f);
 	m_ball.setRadius(10.0f);
 }
 
