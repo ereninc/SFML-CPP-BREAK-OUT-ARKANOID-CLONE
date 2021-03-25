@@ -4,6 +4,7 @@
 #include<SFML/System.hpp>
 #include "Brick.hpp"
 #include "Player.hpp"
+#include "Ball.hpp"
 
 class Scene 
 {
@@ -13,6 +14,7 @@ public:
 	void DrawScene(sf::RenderWindow& window);
 	Brick m_brick;
 	Player m_player;
+	Ball m_ball;
 private:
 	int m_lineCount;
 	int m_columnCount;

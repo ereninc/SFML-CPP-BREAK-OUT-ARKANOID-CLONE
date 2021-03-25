@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="WindowInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ball.hpp" />
     <ClInclude Include="Brick.hpp" />
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="EventHandler.hpp" />

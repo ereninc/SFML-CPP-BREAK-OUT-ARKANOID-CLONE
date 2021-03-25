@@ -18,6 +18,7 @@ void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
 	m_columnCell.setSize({ 1,sceneHeight });
 	m_brick.InstantiateBricks();
 	m_player.InstantiatePlayer();
+	m_ball.SetBall();
 }
 
 void Scene::DrawScene(sf::RenderWindow& window)
@@ -26,6 +27,7 @@ void Scene::DrawScene(sf::RenderWindow& window)
 	m_brick.BrickDraw(window);
 	m_player.DrawPlayer(window);
 	m_player.PlayerMovement();
+	m_ball.DrawBall(window);
 
 	//GRID
 	/*sf::Vector2f pos;
