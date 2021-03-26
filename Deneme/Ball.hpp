@@ -15,6 +15,7 @@ private:
 	Window m_window;
 	sf::CircleShape m_ball;
 	sf::Vector2f m_ballPosition;
+	sf::Vector2f m_ballSpeedVec;
 	float m_ballSpeed = 1.0f;
 	bool isStarted = false;
 };
