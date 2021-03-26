@@ -10,6 +10,7 @@ public:
 	void DrawPlayer(sf::RenderWindow& window);
 	sf::Vector2f GetSize();
 	void PlayerMovement();
+	~Player();
 private:
 	Window m_window;
 	float m_playerMoveVal = 0.0f;

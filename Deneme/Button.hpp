@@ -14,6 +14,7 @@ public:
 	void Size(float width, float height);
 	void Position(float x, float y);
 	sf::Vector2f GetSize();
+	~Button();
 private:
 	sf::RectangleShape m_backGround;
 	sf::Text m_text;

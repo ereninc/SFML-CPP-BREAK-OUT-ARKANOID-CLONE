@@ -52,3 +52,7 @@ void Player::PlayerMovement()
 		m_playerMoveVal = -1.0f;
 	}
 }
+
+Player::~Player()
+{
+}

@@ -60,6 +60,10 @@ sf::Vector2f Button::GetSize()
 	return sf::Vector2f(m_size);
 }
 
+Button::~Button()
+{
+}
+
 void Button::MouseMove(int x, int y)
 {
 	std::cout << x << " , " << y << std::endl;

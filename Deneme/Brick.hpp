@@ -7,6 +7,7 @@ public:
 	Brick();
 	void InstantiateBricks();
 	void BrickDraw(sf::RenderWindow& window);
+	~Brick();
 private:
 	sf::RectangleShape m_brick;
 };

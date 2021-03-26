@@ -28,6 +28,7 @@ void Scene::DrawScene(sf::RenderWindow& window)
 	m_player.DrawPlayer(window);
 	m_player.PlayerMovement();
 	m_ball.DrawBall(window);
+	m_ball.MovementControl();
 
 	//GRID
 	/*sf::Vector2f pos;

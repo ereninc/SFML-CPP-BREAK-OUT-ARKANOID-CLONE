@@ -27,3 +27,7 @@ void Brick::BrickDraw(sf::RenderWindow& window)
 		}
 	}
 }
+
+Brick::~Brick()
+{
+}
