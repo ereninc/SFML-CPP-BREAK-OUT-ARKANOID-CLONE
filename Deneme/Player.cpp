@@ -52,6 +52,12 @@ void Player::PlayerMovement()
 		m_playerMoveVal = -1.0f;
 	}
 }
+ 
+sf::Vector2f Player::GetPosition()
+{
+	m_playerPosition = m_playerShape.getPosition();
+	return sf::Vector2f(m_playerPosition);
+}
 
 Player::~Player()
 {

@@ -66,7 +66,7 @@ Button::~Button()
 
 void Button::MouseMove(int x, int y)
 {
-	std::cout << x << " , " << y << std::endl;
+	//std::cout << x << " , " << y << std::endl;
 	m_backGround.setFillColor(sf::Color::Cyan);
 }
 
@@ -74,7 +74,7 @@ void Button::MouseOnEnable(sf::Event::MouseButtonEvent btnEvent)
 {
 	WindowInterface::MouseOnEnable(btnEvent);
 	m_backGround.setFillColor(sf::Color::Cyan);
-	std::cout << "Clicked!" << std::endl;
+	//std::cout << "Clicked!" << std::endl;
 }
 
 void Button::MouseOnDisable(sf::Event::MouseButtonEvent btnEvent)
