@@ -4,7 +4,7 @@
 
 Window::Window()
 {
-	SetWindow(800,600, "SFML Deneme2");
+	SetWindow(800,600, "Press Left or Right arrow to Start!");
 }
 
 void Window::SetWindow(unsigned int width, unsigned int height, sf::String title)
@@ -14,7 +14,7 @@ void Window::SetWindow(unsigned int width, unsigned int height, sf::String title
 
 void Window::StartDrawing()
 {
-	m_sfmlWindow.clear();
+	m_sfmlWindow.clear(sf::Color(63, 77, 99, 255));
 }
 
 void Window::EndDrawing()

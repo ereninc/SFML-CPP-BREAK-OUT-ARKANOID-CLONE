@@ -20,10 +20,10 @@ void Ball::DrawBall(sf::RenderWindow& window)
 	if (isStarted)
 	{
 		window.draw(m_ball);
+		window.setTitle("BREAK OUT : WILD HUNT");
 		m_isBallOutside = false;
 		ClampBorders();
 		IsBallOutside();
-		//CheckPlayerCollision();
 	}
 }
 
@@ -43,7 +43,6 @@ void Ball::ClampBorders()
 {
 	auto ballPos = GetPosisiton();
 	auto screenSize = m_window.getWindow().getSize();
-	auto playerPos = m_player.GetPosition();
 	m_ballSpeedVec.x += m_ballSpeed;
 	m_ballSpeedVec.y += m_ballSpeed;
 	m_ball.setPosition(ballPos.x - m_ballSpeedVec.x, ballPos.y - m_ballSpeedVec.y);
@@ -52,24 +51,37 @@ void Ball::ClampBorders()
 	if (ballPos.y <= 0) m_ballSpeedVec.y = -abs(m_ballSpeedVec.y);
 	if (ballPos.y >= screenSize.y) m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
 		//m_isBallOutside = true;
-		
-	if (ballPos.y >= playerPos.y && ballPos.y <= playerPos.y + 5)
+
+
+
+	/*if (ballPos.y >= playerPos.y + 590 && ballPos.y <= playerPos.y + 600)
 	{
-		std::cout << "SAME Y" << std::endl;
+		//std::cout << "SAME Y" << std::endl;
 		std::cout << "playerPos.y : " << playerPos.y << std::endl;
-		std::cout << "ballPos.y : " << ballPos.y << std::endl;
+		//std::cout << "ballPos.y : " << ballPos.y << std::endl;
 	}
 	if ((ballPos.x >= playerPos.x && ballPos.x <= (playerPos.x + 120.0f)))
 	{
 		//std::cout << "SAME X" << std::endl;
+		std::cout << "playerPos.x : " << playerPos.x << std::endl;
+		//std::cout << "ballPos.x : " << ballPos.x << std::endl;
 		//m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
-	}
+	}*/
 }
 
 bool Ball::IsBallOutside()
 {
-	//std::cout << m_isBallOutside << std::endl;
 	return m_isBallOutside;
+}
+
+float Ball::GetBallPosX()
+{
+	return m_ball.getPosition().x;
+}
+
+float Ball::GetBallPosY()
+{
+	return m_ball.getPosition().y;
 }
 
 Ball::~Ball()
