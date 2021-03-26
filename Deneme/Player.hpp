@@ -12,8 +12,8 @@ public:
 	void PlayerMovement();
 	sf::Vector2f GetPosition();
 	sf::Vector2f m_position;
-	float GetPlayerPosX();
-	float GetPlayerPosY();
+	float GetPlayerPosX() const;
+	float GetPlayerPosY() const;
 	~Player();
 private:
 	Window m_window;

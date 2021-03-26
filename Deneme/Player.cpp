@@ -34,7 +34,7 @@ void Player::DrawPlayer(sf::RenderWindow& window)
 		m_playerShape.setPosition(m_position.x - 1.0f, m_position.y);
 	}
 
-	std::cout << GetPlayerPosX() << std::endl;
+	//std::cout << GetPlayerPosX() << std::endl;
 }
 
 sf::Vector2f Player::GetSize()
@@ -60,12 +60,12 @@ sf::Vector2f Player::GetPosition()
 	return sf::Vector2f(m_position);
 }
 
-float Player::GetPlayerPosX()
+float Player::GetPlayerPosX() const
 {
 	return m_playerShape.getPosition().x;
 }
 
-float Player::GetPlayerPosY()
+float Player::GetPlayerPosY() const
 {
 	return m_playerShape.getPosition().y;
 }

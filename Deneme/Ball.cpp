@@ -33,7 +33,7 @@ void Ball::MovementControl()
 		sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) isStarted = true;
 }
 
-sf::Vector2f Ball::GetPosisiton()
+sf::Vector2f Ball::GetPosition()
 {
 	m_ballPosition = m_ball.getPosition();
 	return sf::Vector2f(m_ballPosition);
@@ -41,7 +41,7 @@ sf::Vector2f Ball::GetPosisiton()
 
 void Ball::ClampBorders()
 {
-	auto ballPos = GetPosisiton();
+	auto ballPos = GetPosition();
 	auto screenSize = m_window.getWindow().getSize();
 	m_ballSpeedVec.x += m_ballSpeed;
 	m_ballSpeedVec.y += m_ballSpeed;
@@ -69,17 +69,17 @@ void Ball::ClampBorders()
 	}*/
 }
 
-bool Ball::IsBallOutside()
+bool Ball::IsBallOutside() const
 {
 	return m_isBallOutside;
 }
 
-float Ball::GetBallPosX()
+float Ball::GetBallPosX() const
 {
 	return m_ball.getPosition().x;
 }
 
-float Ball::GetBallPosY()
+float Ball::GetBallPosY() const
 {
 	return m_ball.getPosition().y;
 }
