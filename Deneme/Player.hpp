@@ -11,13 +11,14 @@ public:
 	sf::Vector2f GetSize();
 	void PlayerMovement();
 	sf::Vector2f GetPosition();
-	sf::Vector2f m_position;
 	float GetPlayerPosX() const;
 	float GetPlayerPosY() const;
+	sf::RectangleShape GetPlayer();
 	~Player();
 private:
 	Window m_window;
-	sf::RectangleShape m_playerShape;
 	float m_playerMoveVal = 0.0f;
 	sf::Vector2f m_size;
+	sf::Vector2f m_position;
+	sf::RectangleShape m_playerShape;
 };

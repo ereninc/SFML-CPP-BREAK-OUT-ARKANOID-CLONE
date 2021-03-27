@@ -13,16 +13,17 @@ public:
 	sf::Vector2f GetPosition();
 	void ClampBorders();
 	bool IsBallOutside() const;
+	void CheckPlayerCollision();
 	float GetBallPosX() const;
 	float GetBallPosY() const;
 	~Ball();
 private:
-	Window m_window; 
+	Window m_window;
 	Player m_player;
-	bool m_isBallOutside = false;
+	bool m_isBallOutside;
 	sf::CircleShape m_ball;
 	sf::Vector2f m_ballPosition;
 	sf::Vector2f m_ballSpeedVec;
-	float m_ballSpeed = 0.0001f;
-	bool isStarted = false;
+	float m_ballSpeed;
+	bool isStarted;
 };

@@ -10,15 +10,16 @@ void Player::InstantiatePlayer()
 	m_playerShape.setFillColor(sf::Color::Magenta);
 	m_playerShape.setOutlineColor(sf::Color::White);
 	m_playerShape.setOutlineThickness(2.0f);
-	m_playerShape.setPosition(sf::Vector2f(400.0f, 560.0f));
 	m_size = sf::Vector2f(120.0f, 20.0f);
+	m_position = sf::Vector2f(400.0f, 560.0f);
+	m_playerShape.setPosition(m_position);
 	m_playerShape.setSize(m_size);
 }
 
 void Player::DrawPlayer(sf::RenderWindow& window)
 {
 	window.draw(m_playerShape);
-	m_position = GetPosition();
+	auto m_position = GetPosition();
 	auto screenSize = m_window.getWindow().getSize();
 	if (m_position.x + 120.0f <= screenSize.x && m_position.x >= 0)
 	{
@@ -56,8 +57,7 @@ void Player::PlayerMovement()
  
 sf::Vector2f Player::GetPosition()
 {
-	m_position = m_playerShape.getPosition();
-	return sf::Vector2f(m_position);
+	return sf::Vector2f(m_playerShape.getPosition());
 }
 
 float Player::GetPlayerPosX() const
@@ -68,6 +68,11 @@ float Player::GetPlayerPosX() const
 float Player::GetPlayerPosY() const
 {
 	return m_playerShape.getPosition().y;
+}
+
+sf::RectangleShape Player::GetPlayer()
+{
+	return m_playerShape;
 }
 
 Player::~Player()

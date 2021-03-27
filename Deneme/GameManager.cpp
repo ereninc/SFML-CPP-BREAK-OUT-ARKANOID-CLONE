@@ -11,12 +11,6 @@ GameManager::GameManager()
 	auto size = m_window.getWindow().getSize();
 	m_cellSize = 20.0f;
 	m_scene.CreateScene(size.x, size.y, m_cellSize);
-	m_shape.setRadius(30.0f);
-	m_shape.setFillColor(sf::Color::Cyan);
-	m_shape.setOutlineColor(sf::Color::White);
-	m_shape.setOutlineThickness(2.0f);
-	m_incVal = 1.0f;
-	m_posX = 10.0f;
 	m_frameRate = 1.0f / 60.0f;
 	MenuSet();	
 }
@@ -51,7 +45,6 @@ void GameManager::UpdateScene()
 void GameManager::DrawScene()
 {
 	m_window.StartDrawing();
-	m_window.Draw(m_shape);
 	if (m_isNewGameClicked)
 	{
 		m_scene.DrawScene(m_window.getWindow());
@@ -84,13 +77,12 @@ void GameManager::Click()
 
 void GameManager::NewGameButton()
 {
-	std::cout << "Game will start in 3.. 2.. 1!" << std::endl;
+	m_window.getWindow().setTitle("PRESS LEFT OR RIGHT ARROW TO START!");
 	m_isNewGameClicked = true;
 }
 
 void GameManager::QuitGameButton()
 {
-	std::cout << "Thanks for not playing." << std::endl;
 	m_isClosed = true;
 	exit(0); 
 }

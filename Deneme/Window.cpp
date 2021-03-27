@@ -4,7 +4,7 @@
 
 Window::Window()
 {
-	SetWindow(800,600, "Press Left or Right arrow to Start!");
+	SetWindow(800,600, "BREAK OUT!");
 }
 
 void Window::SetWindow(unsigned int width, unsigned int height, sf::String title)

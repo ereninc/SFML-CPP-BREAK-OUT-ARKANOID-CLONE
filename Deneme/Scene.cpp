@@ -3,14 +3,12 @@
 
 Scene::Scene()
 {
-	std::cout << "Scene Constructor" << std::endl;
 	m_lineCell.setFillColor(sf::Color::Green);
 	m_columnCell.setFillColor(sf::Color::Green);
 }
 
 void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
 {
-	std::cout << "Creating scene method." << std::endl;
 	m_columnCount = sceneWidth / cellSize;
 	m_lineCount = sceneHeight / cellSize;
 	m_cellSize = cellSize;
@@ -23,14 +21,13 @@ void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
 
 void Scene::DrawScene(sf::RenderWindow& window)
 {	
-	//std::cout << "Drawing the scene." << std::endl;
 	m_brick.BrickDraw(window);
 	m_player.DrawPlayer(window);
 	m_player.PlayerMovement();
 	m_ball.DrawBall(window);
 	m_ball.MovementControl();
 
-	//GRID
+#pragma region Grid
 	/*sf::Vector2f pos;
 	for (int line = 0; line < m_lineCount; line++)
 	{
@@ -46,4 +43,5 @@ void Scene::DrawScene(sf::RenderWindow& window)
 		m_columnCell.setPosition(pos);
 		window.draw(m_columnCell);
 	}*/
+#pragma endregion
 }

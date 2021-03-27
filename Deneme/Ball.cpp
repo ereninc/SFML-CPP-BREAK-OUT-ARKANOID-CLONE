@@ -3,6 +3,9 @@
 
 Ball::Ball()
 {
+	m_isBallOutside = false;
+	m_ballSpeed = 0.0001f;
+	isStarted = false;	
 }
 
 void Ball::SetBall()
@@ -11,7 +14,7 @@ void Ball::SetBall()
 	m_ball.setRadius(7.5f);
 	m_ball.setOutlineThickness(2.0f);
 	m_ball.setOutlineColor(sf::Color::White);
-	m_ballSpeedVec = {0.7f, 0.7f};
+	m_ballSpeedVec = { 0.7f, 0.7f };
 	m_ball.setPosition(sf::Vector2f(400.0f, 540.0f));
 }
 
@@ -24,6 +27,7 @@ void Ball::DrawBall(sf::RenderWindow& window)
 		m_isBallOutside = false;
 		ClampBorders();
 		IsBallOutside();
+		CheckPlayerCollision();
 	}
 }
 
@@ -72,6 +76,14 @@ void Ball::ClampBorders()
 bool Ball::IsBallOutside() const
 {
 	return m_isBallOutside;
+}
+
+void Ball::CheckPlayerCollision()
+{
+	if (m_ball.getGlobalBounds().intersects(m_player.GetPlayer().getGlobalBounds()))
+	{
+		std::cout << "touched" << std::endl;
+	}
 }
 
 float Ball::GetBallPosX() const
