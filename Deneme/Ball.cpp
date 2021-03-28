@@ -1,6 +1,7 @@
 #include "Ball.hpp"
 #include <iostream>
 
+//ball
 Ball::Ball()
 {
 	m_isBallOutside = false;
@@ -98,5 +99,4 @@ float Ball::GetBallPosY() const
 
 Ball::~Ball()
 {
-	delete &m_ball;
 }
