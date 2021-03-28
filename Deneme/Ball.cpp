@@ -1,8 +1,6 @@
 #include "Ball.hpp"
 #include <iostream>
 
-//test
-//ball
 Ball::Ball()
 {
 	m_isBallOutside = false;
