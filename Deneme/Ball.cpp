@@ -1,7 +1,11 @@
 #include "Ball.hpp"
 #include <iostream>
 
+<<<<<<< HEAD
 //test
+=======
+//ball
+>>>>>>> master
 Ball::Ball()
 {
 	m_isBallOutside = false;
