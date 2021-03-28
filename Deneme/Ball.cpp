@@ -56,7 +56,7 @@ void Ball::ClampBorders()
 	if (ballPos.y >= screenSize.y) m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
 		//m_isBallOutside = true;
 
-
+	//this one will change
 
 	/*if (ballPos.y >= playerPos.y + 590 && ballPos.y <= playerPos.y + 600)
 	{
