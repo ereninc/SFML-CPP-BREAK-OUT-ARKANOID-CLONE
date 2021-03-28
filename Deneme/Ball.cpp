@@ -98,4 +98,5 @@ float Ball::GetBallPosY() const
 
 Ball::~Ball()
 {
+	delete &m_ball;
 }
