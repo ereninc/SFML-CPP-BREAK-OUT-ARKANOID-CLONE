@@ -82,6 +82,7 @@ void Ball::CheckPlayerCollision()
 {
 	if (m_ball.getGlobalBounds().intersects(m_player.GetPlayer().getGlobalBounds()))
 	{
+		//need to get player's x coordinate
 		std::cout << "touched" << std::endl;
 	}
 }
