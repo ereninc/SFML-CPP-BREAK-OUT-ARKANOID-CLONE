@@ -12,12 +12,13 @@ public:
 	Scene();
 	void CreateScene(float sceneWidth, float sceneHeight, float cellSize);
 	void DrawScene(sf::RenderWindow& window);
+	void SpawnBricks();
 	void CheckCollisions();
-	bool isCollided;
 private:
 	Brick m_brick;
 	Player m_player;
 	Ball m_ball;
+	std::vector<Brick> bricks;
 	int m_lineCount;
 	int m_columnCount;
 	float m_cellSize;

@@ -14,19 +14,22 @@ void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
 	m_cellSize = cellSize;
 	m_lineCell.setSize({ sceneWidth,1 });
 	m_columnCell.setSize({ 1,sceneHeight });
-	m_brick.InstantiateBricks();
 	m_ball.SetBall();
+	SpawnBricks();
 }
 
 void Scene::DrawScene(sf::RenderWindow& window)
 {	
-	m_brick.BrickDraw(window);
-	m_ball.MovementControl();
+	//m_brick.BrickDraw(window);
+	for (auto i : bricks)
+	{
+		i.BrickDraw(window);
+	}
 	m_ball.DrawBall(window);
-	m_player.PlayerMovement();
+	m_ball.MovementControl();
 	m_player.DrawPlayer(window);
+	m_player.PlayerMovement();
 	CheckCollisions();
-	
 
 #pragma region Grid
 	/*sf::Vector2f pos;
@@ -47,21 +50,29 @@ void Scene::DrawScene(sf::RenderWindow& window)
 #pragma endregion
 }
 
+void Scene::SpawnBricks()
+{
+	bricks.push_back(Brick());
+}
+
 void Scene::CheckCollisions()
 {
 	//player - ball
 	if (m_player.GetPlayer().getGlobalBounds().intersects(m_ball.GetBall().getGlobalBounds()))
 	{
 		std::cout << "Touched!" << std::endl;
-		isCollided = true;
 		m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
 	}
 
 	//ball - bricks
-	/*if (m_brick.GetBrick().getGlobalBounds().intersects(m_ball.GetBall().getGlobalBounds()))
+	for (int i = 0; i < bricks.size(); i++)
 	{
-		std::cout << "Brick Touched!" << std::endl;
-		isCollided = true;
-		m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
-	}*/
+		if (m_ball.GetBall().getGlobalBounds().intersects(bricks[i].GetBrick().getGlobalBounds()))
+		{
+			std::cout << "Brick Touched!" << std::endl;
+			bricks.erase(bricks.begin() + i);
+			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+		}
+	}
+	
 }

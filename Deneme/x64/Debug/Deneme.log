@@ -11,9 +11,9 @@ C:\Users\ASUS\Desktop\SFML Programming\TEST\Deneme\GameManager.cpp(13,26): warni
           [
               T=unsigned int
           ]
-  main.cpp
   Scene.cpp
 C:\Users\ASUS\Desktop\SFML Programming\TEST\Deneme\Scene.cpp(12,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 C:\Users\ASUS\Desktop\SFML Programming\TEST\Deneme\Scene.cpp(13,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
   Generating Code...
   Deneme.vcxproj -> C:\Users\ASUS\Desktop\SFML Programming\Dependencies\bin\Deneme.exe

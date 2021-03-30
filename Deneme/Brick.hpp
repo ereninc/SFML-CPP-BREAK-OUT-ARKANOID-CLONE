@@ -5,7 +5,7 @@ class Brick
 {
 public:
 	Brick();
-	void InstantiateBricks();
+	void InitBrick();
 	void BrickDraw(sf::RenderWindow& window);
 	sf::RectangleShape GetBrick();
 	~Brick();

@@ -2,9 +2,10 @@
 
 Brick::Brick()
 {
+	InitBrick();
 }
 
-void Brick::InstantiateBricks()
+void Brick::InitBrick()
 {
 	m_brick.setFillColor(sf::Color::Cyan);
 	m_brick.setOutlineColor(sf::Color::White);

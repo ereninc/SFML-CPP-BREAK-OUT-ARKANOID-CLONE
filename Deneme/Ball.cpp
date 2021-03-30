@@ -55,9 +55,6 @@ void Ball::ClampBorders()
 	if (ballPos.x >= screenSize.x) m_ballSpeedVec.x = abs(m_ballSpeedVec.x);
 	if (ballPos.y <= 0) m_ballSpeedVec.y = -abs(m_ballSpeedVec.y);
 	if (ballPos.y >= screenSize.y) m_isBallOutside = true;
-		//m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
-		//m_isBallOutside = true;
-		//m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
 }
 
 bool Ball::IsBallOutside() const
