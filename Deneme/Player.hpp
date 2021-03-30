@@ -5,20 +5,16 @@
 class Player 
 {
 public:
-	Player();
-	void InstantiatePlayer();
+	Player(float x = 400.0f, float y = 560.0f);
+	void Init();
 	void DrawPlayer(sf::RenderWindow& window);
-	sf::Vector2f GetSize();
 	void PlayerMovement();
-	sf::Vector2f GetPosition();
-	float GetPlayerPosX() const;
-	float GetPlayerPosY() const;
+	void BorderCheck();
 	sf::RectangleShape GetPlayer();
+	sf::Vector2f GetPosition();
 	~Player();
 private:
 	Window m_window;
-	float m_playerMoveVal = 0.0f;
-	sf::Vector2f m_size;
-	sf::Vector2f m_position;
+	float m_playerSpeed = 0.0f;
 	sf::RectangleShape m_playerShape;
 };

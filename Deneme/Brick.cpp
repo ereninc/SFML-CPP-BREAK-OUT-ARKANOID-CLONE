@@ -28,6 +28,11 @@ void Brick::BrickDraw(sf::RenderWindow& window)
 	}
 }
 
+sf::RectangleShape Brick::GetBrick()
+{
+	return sf::RectangleShape(m_brick);
+}
+
 Brick::~Brick()
 {
 }

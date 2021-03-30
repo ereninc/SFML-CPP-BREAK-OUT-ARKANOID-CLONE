@@ -10,20 +10,16 @@ public:
 	void SetBall();
 	void DrawBall(sf::RenderWindow& window);
 	void MovementControl();
-	sf::Vector2f GetPosition();
+	sf::CircleShape GetBall();
 	void ClampBorders();
 	bool IsBallOutside() const;
-	void CheckPlayerCollision();
-	float GetBallPosX() const;
-	float GetBallPosY() const;
+	sf::Vector2f m_ballSpeedVec;
 	~Ball();
 private:
 	Window m_window;
-	Player m_player;
 	bool m_isBallOutside;
 	sf::CircleShape m_ball;
 	sf::Vector2f m_ballPosition;
-	sf::Vector2f m_ballSpeedVec;
 	float m_ballSpeed;
 	bool isStarted;
 };

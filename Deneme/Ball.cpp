@@ -1,6 +1,9 @@
 #include "Ball.hpp"
 #include <iostream>
+#include "Scene.hpp"
 
+Scene scene;
+Player player;
 Ball::Ball()
 {
 	m_isBallOutside = false;
@@ -27,7 +30,6 @@ void Ball::DrawBall(sf::RenderWindow& window)
 		m_isBallOutside = false;
 		ClampBorders();
 		IsBallOutside();
-		CheckPlayerCollision();
 	}
 }
 
@@ -37,15 +39,14 @@ void Ball::MovementControl()
 		sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) isStarted = true;
 }
 
-sf::Vector2f Ball::GetPosition()
+sf::CircleShape Ball::GetBall()
 {
-	m_ballPosition = m_ball.getPosition();
-	return sf::Vector2f(m_ballPosition);
+	return sf::CircleShape(m_ball);
 }
 
 void Ball::ClampBorders()
 {
-	auto ballPos = GetPosition();
+	auto ballPos = m_ball.getPosition();
 	auto screenSize = m_window.getWindow().getSize();
 	m_ballSpeedVec.x += m_ballSpeed;
 	m_ballSpeedVec.y += m_ballSpeed;
@@ -53,48 +54,15 @@ void Ball::ClampBorders()
 	if (ballPos.x <= 0) m_ballSpeedVec.x = -abs(m_ballSpeedVec.x);
 	if (ballPos.x >= screenSize.x) m_ballSpeedVec.x = abs(m_ballSpeedVec.x);
 	if (ballPos.y <= 0) m_ballSpeedVec.y = -abs(m_ballSpeedVec.y);
-	if (ballPos.y >= screenSize.y) m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
-		//m_isBallOutside = true;
-
-	//this one will change
-
-	/*if (ballPos.y >= playerPos.y + 590 && ballPos.y <= playerPos.y + 600)
-	{
-		//std::cout << "SAME Y" << std::endl;
-		std::cout << "playerPos.y : " << playerPos.y << std::endl;
-		//std::cout << "ballPos.y : " << ballPos.y << std::endl;
-	}
-	if ((ballPos.x >= playerPos.x && ballPos.x <= (playerPos.x + 120.0f)))
-	{
-		//std::cout << "SAME X" << std::endl;
-		std::cout << "playerPos.x : " << playerPos.x << std::endl;
-		//std::cout << "ballPos.x : " << ballPos.x << std::endl;
+	if (ballPos.y >= screenSize.y) m_isBallOutside = true;
 		//m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
-	}*/
+		//m_isBallOutside = true;
+		//m_ballSpeedVec.y = abs(m_ballSpeedVec.y);
 }
 
 bool Ball::IsBallOutside() const
 {
 	return m_isBallOutside;
-}
-
-void Ball::CheckPlayerCollision()
-{
-	if (m_ball.getGlobalBounds().intersects(m_player.GetPlayer().getGlobalBounds()))
-	{
-		//need to get player's x coordinate
-		std::cout << "touched" << std::endl;
-	}
-}
-
-float Ball::GetBallPosX() const
-{
-	return m_ball.getPosition().x;
-}
-
-float Ball::GetBallPosY() const
-{
-	return m_ball.getPosition().y;
 }
 
 Ball::~Ball()
