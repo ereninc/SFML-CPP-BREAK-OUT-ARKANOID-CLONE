@@ -1,4 +1,5 @@
 #include "Brick.hpp"
+#include "Scene.hpp"
 
 Brick::Brick()
 {

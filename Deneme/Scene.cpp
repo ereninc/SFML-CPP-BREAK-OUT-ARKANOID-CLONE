@@ -14,13 +14,11 @@ void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
 	m_cellSize = cellSize;
 	m_lineCell.setSize({ sceneWidth,1 });
 	m_columnCell.setSize({ 1,sceneHeight });
-	m_ball.SetBall();
 	SpawnBricks();
 }
 
 void Scene::DrawScene(sf::RenderWindow& window)
-{	
-	//m_brick.BrickDraw(window);
+{
 	for (auto i : bricks)
 	{
 		i.BrickDraw(window);
@@ -74,5 +72,4 @@ void Scene::CheckCollisions()
 			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
 		}
 	}
-	
 }

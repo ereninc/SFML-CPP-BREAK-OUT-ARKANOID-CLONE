@@ -1,14 +1,12 @@
 #include "Ball.hpp"
 #include <iostream>
-#include "Scene.hpp"
 
-Scene scene;
-Player player;
 Ball::Ball()
 {
 	m_isBallOutside = false;
 	m_ballSpeed = 0.0001f;
 	isStarted = false;	
+	SetBall();
 }
 
 void Ball::SetBall()
