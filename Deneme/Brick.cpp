@@ -1,8 +1,9 @@
 #include "Brick.hpp"
 #include "Scene.hpp"
 
-Brick::Brick()
+Brick::Brick(float x, float y)
 {
+	m_brick.setPosition(x, y);
 	InitBrick();
 }
 
@@ -16,18 +17,7 @@ void Brick::InitBrick()
 
 void Brick::BrickDraw(sf::RenderWindow& window)
 {
-	float xOffset = 20.0f;
-	float yOffset = 0.0f;
-	for (int x = 0; x < 7; x++)
-	{
-		for (int y = 0; y < 10; y++)
-		{
-			window.draw(m_brick);
-			m_brick.setPosition(sf::Vector2f(0.0f, 0.0f));
-			auto brickPos = m_brick.getPosition();
-			m_brick.setPosition(brickPos.x + 20 * 6 * x, brickPos.y + 40 * y);
-		}
-	}
+	window.draw(m_brick);
 }
 
 sf::RectangleShape Brick::GetBrick()

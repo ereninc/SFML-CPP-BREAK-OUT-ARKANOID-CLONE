@@ -50,24 +50,33 @@ void Scene::DrawScene(sf::RenderWindow& window)
 
 void Scene::SpawnBricks()
 {
-	bricks.push_back(Brick());
+	float xOffset = 20.0f;
+	float yOffset = 0.0f;
+	for (int x = 0; x < 7; x++)
+	{
+		for (int y = 0; y < 10; y++)
+		{
+			auto brickPos = m_brick.GetBrick().getPosition();
+			bricks.push_back(Brick(brickPos.x + 20 * 6 * x, brickPos.y + 40 * y));
+		}
+	}
 }
 
 void Scene::CheckCollisions()
 {
-	//player - ball
+	//player - ball carpisma
 	if (m_player.GetPlayer().getGlobalBounds().intersects(m_ball.GetBall().getGlobalBounds()))
 	{
-		std::cout << "Touched!" << std::endl;
+		std::cout << "Touched player!" << std::endl;
 		m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
 	}
 
-	//ball - bricks
+	//ball - bricks carpisma
 	for (int i = 0; i < bricks.size(); i++)
 	{
 		if (m_ball.GetBall().getGlobalBounds().intersects(bricks[i].GetBrick().getGlobalBounds()))
 		{
-			std::cout << "Brick Touched!" << std::endl;
+			//std::cout << "Touched " << i << ". brick!" << std::endl;
 			bricks.erase(bricks.begin() + i);
 			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
 		}
