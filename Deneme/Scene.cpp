@@ -46,6 +46,7 @@ void Scene::DrawScene(sf::RenderWindow& window)
 		window.draw(m_columnCell);
 	}*/
 #pragma endregion
+
 }
 
 void Scene::SpawnBricks()
