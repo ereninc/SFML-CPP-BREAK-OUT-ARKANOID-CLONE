@@ -73,7 +73,7 @@ void Ball::ClampBorders()
 	m_ballSpeedVec.y += m_ballSpeed;
 	m_ball.setPosition(ballPos.x - m_ballSpeedVec.x, ballPos.y - m_ballSpeedVec.y);
 	if (ballPos.x <= 40) m_ballSpeedVec.x = -abs(m_ballSpeedVec.x);
-	if (ballPos.x >= screenSize.x - 40) m_ballSpeedVec.x = abs(m_ballSpeedVec.x);
+	if (ballPos.x >= screenSize.x - 45) m_ballSpeedVec.x = abs(m_ballSpeedVec.x);
 	if (ballPos.y <= 40) m_ballSpeedVec.y = -abs(m_ballSpeedVec.y);
 	if (ballPos.y >= screenSize.y) m_isBallOutside = true;
 }

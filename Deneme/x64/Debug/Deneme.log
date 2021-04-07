@@ -1,3 +1,2 @@
-﻿  Brick.cpp
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(31,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  Scene.cpp
   Deneme.vcxproj -> C:\Users\ASUS\Desktop\SFML Programming\Dependencies\bin\Deneme.exe

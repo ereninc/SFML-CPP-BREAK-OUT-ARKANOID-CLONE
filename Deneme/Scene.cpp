@@ -111,10 +111,29 @@ void Scene::CheckCollisions()
 	{
 		sf::FloatRect ballBounds = m_ball.GetBall().getGlobalBounds();
 		sf::FloatRect brickBounds = bricks[i].GetBrick().getGlobalBounds();
-		if (brickBounds.intersects(ballBounds))
+		if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
 		{
 			//std::cout << "Touched " << i << ". brick!" << std::endl;
-			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
+			bricks.erase(bricks.begin() + i);
+		}
+		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
+		{
+			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
+			bricks.erase(bricks.begin() + i);
+		}
+		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
+		{
+			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
+			bricks.erase(bricks.begin() + i);
+		}
+		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
+		{
+			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
 			bricks.erase(bricks.begin() + i);
 		}
 	}

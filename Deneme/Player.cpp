@@ -48,15 +48,12 @@ void Player::PlayerMovement()
 	//inputlar
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		m_playerShape.move(m_playerSpeed = 10.0f, 0);
-		//m_playerSprite.move(m_playerSpeed = 10.0f, 0);
+		m_playerShape.move(m_playerSpeed = 15.0f, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		m_playerShape.move(m_playerSpeed = -10.0f, 0);
-		//m_playerSprite.move(m_playerSpeed = -10.0f, 0);
+		m_playerShape.move(m_playerSpeed = -15.0f, 0);
 	}
-	//std::cout << m_playerShape.getPosition().x << " - " << m_playerShape.getPosition().y << std::endl;
 }
 
 void Player::BorderCheck()

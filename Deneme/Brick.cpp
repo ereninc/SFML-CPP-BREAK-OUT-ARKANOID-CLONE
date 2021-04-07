@@ -5,9 +5,9 @@
 std::string fileName3 = "";
 Brick::Brick(float x, float y)
 {
-	//Random();
 	m_brick.setPosition(x, y);
-	/*if (!m_brickTexture.loadFromFile(fileName3))
+	/*Random();
+	if (!m_brickTexture.loadFromFile(fileName3))
 		std::cout << "PNG YOK" << std::endl;
 	else {
 		m_brickSprite.setTexture(m_brickTexture);
@@ -41,8 +41,8 @@ void Brick::Random()
 void Brick::BrickDraw(sf::RenderWindow& window)
 {
 	window.draw(m_brick);
-	window.draw(m_brickSprite);
-	m_brickSprite.setPosition(m_brick.getPosition());
+	//window.draw(m_brickSprite);
+	//m_brickSprite.setPosition(m_brick.getPosition());
 }
 
 sf::RectangleShape Brick::GetBrick()
