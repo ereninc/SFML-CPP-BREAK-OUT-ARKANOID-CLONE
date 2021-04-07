@@ -3,18 +3,12 @@
 
 Scene::Scene()
 {
-	m_lineCell.setFillColor(sf::Color::Green);
-	m_columnCell.setFillColor(sf::Color::Green);
 }
 
-void Scene::CreateScene(float sceneWidth, float sceneHeight, float cellSize)
+void Scene::CreateScene()
 {
-	m_columnCount = sceneWidth / cellSize;
-	m_lineCount = sceneHeight / cellSize;
-	m_cellSize = cellSize;
-	m_lineCell.setSize({ sceneWidth,1 });
-	m_columnCell.setSize({ 1,sceneHeight });
 	SpawnBricks();
+	DrawWalls();
 }
 
 void Scene::DrawScene(sf::RenderWindow& window)
@@ -22,6 +16,10 @@ void Scene::DrawScene(sf::RenderWindow& window)
 	for (auto i : bricks)
 	{
 		i.BrickDraw(window);
+	}
+	for (auto j : walls)
+	{
+		j.DrawWall(window);
 	}
 	m_ball.DrawBall(window);
 	m_ball.MovementControl();
@@ -53,13 +51,38 @@ void Scene::SpawnBricks()
 {
 	float xOffset = 20.0f;
 	float yOffset = 0.0f;
-	for (int x = 0; x < 7; x++)
+	for (int x = 0; x < 6; x++)
 	{
-		for (int y = 0; y < 10; y++)
+		for (int y = 0; y < 15; y++)
 		{
 			auto brickPos = m_brick.GetBrick().getPosition();
-			bricks.push_back(Brick(brickPos.x + 20 * 6 * x, brickPos.y + 40 * y));
+			bricks.push_back(Brick(brickPos.x + (15 * 6 * x) + 35.f, brickPos.y + (30 * y) + 40.0f));
 		}
+	}
+}
+
+void Scene::DrawWalls()
+{
+	float x = 0;
+	float y = 0;
+	for (int x = 0; x < 27; x++)
+	{
+		auto wallPos = m_wall.GetWall().getPosition();
+		walls.push_back(Wall(wallPos.x + (x * 22) + 4.f, wallPos.y + (22 * y) + 5.0f));
+		if (x == 26)
+		{
+			for (int y = 0; y < 36; y++)
+			{
+				auto wallPos = m_wall.GetWall().getPosition();
+				walls.push_back(Wall(wallPos.x + (x * 22) + 4.f, wallPos.y + (22 * y) + 5.0f));
+			}
+		}
+	}
+
+	for (int y = 0; y < 36; y++)
+	{
+		auto wallPos = m_wall.GetWall().getPosition();
+		walls.push_back(Wall(wallPos.x + (x * 22) + 4.f, wallPos.y + (22 * y) + 5.0f));
 	}
 }
 

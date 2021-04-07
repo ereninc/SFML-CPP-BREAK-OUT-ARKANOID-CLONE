@@ -4,12 +4,13 @@
 
 Window::Window()
 {
-	SetWindow(800,600, "BREAK OUT!");
+	SetWindow(600, 800, "BREAK OUT!");
 }
 
 void Window::SetWindow(unsigned int width, unsigned int height, sf::String title)
 {
 	m_sfmlWindow.create(sf::VideoMode(width, height), title);
+	m_sfmlWindow.setFramerateLimit(60);
 }
 
 void Window::StartDrawing()

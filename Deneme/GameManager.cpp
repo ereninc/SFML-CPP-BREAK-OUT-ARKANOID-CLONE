@@ -10,7 +10,7 @@ GameManager::GameManager()
 	m_isNewGameClicked = false;
 	auto size = m_window.getWindow().getSize();
 	m_cellSize = 20.0f;
-	m_scene.CreateScene(size.x, size.y, m_cellSize);
+	m_scene.CreateScene();
 	m_frameRate = 1.0f / 60.0f;
 	MenuSet();	
 }
@@ -45,13 +45,13 @@ void GameManager::UpdateScene()
 void GameManager::DrawScene()
 {
 	m_window.StartDrawing();
-	if (m_isNewGameClicked)
+	//if (m_isNewGameClicked)
 	{
 		m_scene.DrawScene(m_window.getWindow());
 	}
-	else
+	//else
 	{
-		MenuDraw();
+		//MenuDraw();
 	}
 	m_window.EndDrawing();
 }
@@ -77,7 +77,7 @@ void GameManager::Click()
 
 void GameManager::NewGameButton()
 {
-	m_window.getWindow().setTitle("PRESS LEFT OR RIGHT ARROW TO START!");
+	m_window.getWindow().setTitle("PRESS SPACE TO START!");
 	m_isNewGameClicked = true;
 }
 

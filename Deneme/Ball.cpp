@@ -15,8 +15,8 @@ void Ball::SetBall()
 	m_ball.setRadius(7.5f);
 	m_ball.setOutlineThickness(2.0f);
 	m_ball.setOutlineColor(sf::Color::White);
-	m_ballSpeedVec = { 0.7f, 0.7f };
-	m_ball.setPosition(sf::Vector2f(400.0f, 540.0f));
+	m_ballSpeedVec = { 5.7f, 5.7f };
+	m_ball.setPosition(sf::Vector2f(400.0f, 740.0f));
 }
 
 void Ball::DrawBall(sf::RenderWindow& window)
@@ -33,8 +33,9 @@ void Ball::DrawBall(sf::RenderWindow& window)
 
 void Ball::MovementControl()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || 
-		sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) isStarted = true;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) ||
+		sf::Keyboard::isKeyPressed(sf::Keyboard::Left) ||
+		sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) isStarted = true;
 }
 
 sf::CircleShape Ball::GetBall()
@@ -49,9 +50,9 @@ void Ball::ClampBorders()
 	m_ballSpeedVec.x += m_ballSpeed;
 	m_ballSpeedVec.y += m_ballSpeed;
 	m_ball.setPosition(ballPos.x - m_ballSpeedVec.x, ballPos.y - m_ballSpeedVec.y);
-	if (ballPos.x <= 0) m_ballSpeedVec.x = -abs(m_ballSpeedVec.x);
-	if (ballPos.x >= screenSize.x) m_ballSpeedVec.x = abs(m_ballSpeedVec.x);
-	if (ballPos.y <= 0) m_ballSpeedVec.y = -abs(m_ballSpeedVec.y);
+	if (ballPos.x <= 40) m_ballSpeedVec.x = -abs(m_ballSpeedVec.x);
+	if (ballPos.x >= screenSize.x - 40) m_ballSpeedVec.x = abs(m_ballSpeedVec.x);
+	if (ballPos.y <= 40) m_ballSpeedVec.y = -abs(m_ballSpeedVec.y);
 	if (ballPos.y >= screenSize.y) m_isBallOutside = true;
 }
 

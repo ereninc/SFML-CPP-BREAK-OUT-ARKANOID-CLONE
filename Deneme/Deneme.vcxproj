@@ -153,6 +153,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowInterface.cpp" />
   </ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="Wall.hpp" />
     <ClInclude Include="Window.hpp" />
     <ClInclude Include="WindowInterface.hpp" />
   </ItemGroup>

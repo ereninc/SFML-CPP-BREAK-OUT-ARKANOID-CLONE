@@ -5,7 +5,7 @@
 class Player 
 {
 public:
-	Player(float x = 400.0f, float y = 560.0f);
+	Player(float x = 400.0f, float y = 760.0f);
 	void Init();
 	void DrawPlayer(sf::RenderWindow& window);
 	void PlayerMovement();
