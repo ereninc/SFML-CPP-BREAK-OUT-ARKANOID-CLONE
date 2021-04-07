@@ -89,7 +89,7 @@ void GameManager::QuitGameButton()
 
 void GameManager::MenuSet()
 {
-	if (font.loadFromFile("piksel.ttf") != false)
+	/*if (font.loadFromFile("piksel.ttf") != false)
 	{
 		m_newGameButton.Font(font);
 		m_quitButton.Font(font);
@@ -115,6 +115,7 @@ void GameManager::MenuSet()
 	m_window.AddMember(&m_quitButton);
 	auto exitFunction = std::bind(&GameManager::QuitGameButton, this);
 	m_quitButton.AddFunction(exitFunction);
+*/
 }
 
 void GameManager::MenuDraw()

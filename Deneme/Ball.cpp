@@ -37,7 +37,6 @@ void Ball::Random()
 	if (a == 4) fileName2 = "ball_red.png";
 	if (a == 5) fileName2 = "ball_silver.png";
 	if (a == 6) fileName2 = "ball_yellow.png";
-	else fileName2 = "ball_yellow.png";
 }
 
 void Ball::DrawBall(sf::RenderWindow& window)

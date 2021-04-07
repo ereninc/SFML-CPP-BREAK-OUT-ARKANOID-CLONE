@@ -33,7 +33,6 @@ void Player::Random()
 	if (a == 3) fileName = "bat_orange.png";
 	if (a == 4) fileName = "bat_pink.png";
 	if (a == 5) fileName = "bat_yellow.png";
-	else fileName = "bat_black.png";
 }
 
 void Player::DrawPlayer(sf::RenderWindow& window)
