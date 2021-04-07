@@ -31,12 +31,12 @@ void Ball::Random()
 	srand(time(NULL));
 	int a = rand() % 6 + 1;
 	std::cout << "Ball rnd : " << a << std::endl;
-	if (a == 1) fileName2 = "ball_blue.png";
-	if (a == 2) fileName2 = "ball_green.png";
-	if (a == 3) fileName2 = "ball_orange.png";
-	if (a == 4) fileName2 = "ball_red.png";
-	if (a == 5) fileName2 = "ball_silver.png";
-	if (a == 6) fileName2 = "ball_yellow.png";
+	if (a == 1) fileName2 = "resimler/ball_blue.png";
+	if (a == 2) fileName2 = "resimler/ball_green.png";
+	if (a == 3) fileName2 = "resimler/ball_orange.png";
+	if (a == 4) fileName2 = "resimler/ball_red.png";
+	if (a == 5) fileName2 = "resimler/ball_silver.png";
+	if (a == 6) fileName2 = "resimler/ball_yellow.png";
 }
 
 void Ball::DrawBall(sf::RenderWindow& window)

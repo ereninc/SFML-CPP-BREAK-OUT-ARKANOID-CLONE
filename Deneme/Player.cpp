@@ -28,11 +28,11 @@ void Player::Random()
 	srand(time(NULL));
 	int a = rand() % 5 + 1;
 	std::cout << "Player rnd : " << a << std::endl;
-	if (a == 1) fileName = "bat_black.png";
-	if (a == 2) fileName = "bat_blue.png";
-	if (a == 3) fileName = "bat_orange.png";
-	if (a == 4) fileName = "bat_pink.png";
-	if (a == 5) fileName = "bat_yellow.png";
+	if (a == 1) fileName = "resimler/bat_black.png";
+	if (a == 2) fileName = "resimler/bat_blue.png";
+	if (a == 3) fileName = "resimler/bat_orange.png";
+	if (a == 4) fileName = "resimler/bat_pink.png";
+	if (a == 5) fileName = "resimler/bat_yellow.png";
 }
 
 void Player::DrawPlayer(sf::RenderWindow& window)
