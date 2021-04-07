@@ -7,6 +7,7 @@ class Player
 public:
 	Player(float x = 400.0f, float y = 760.0f);
 	void Init();
+	void Random();
 	void DrawPlayer(sf::RenderWindow& window);
 	void PlayerMovement();
 	void BorderCheck();
@@ -16,5 +17,7 @@ public:
 private:
 	Window m_window;
 	float m_playerSpeed = 0.0f;
+	sf::Texture m_playerTexture;
+	sf::Sprite m_playerSprite;
 	sf::RectangleShape m_playerShape;
 };

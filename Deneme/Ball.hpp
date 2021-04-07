@@ -8,9 +8,10 @@ class Ball
 public:
 	Ball();
 	void SetBall();
+	void Random();
 	void DrawBall(sf::RenderWindow& window);
 	void MovementControl();
-	sf::CircleShape GetBall();
+	sf::RectangleShape GetBall();
 	void ClampBorders();
 	bool IsBallOutside() const;
 	sf::Vector2f m_ballSpeedVec;
@@ -18,7 +19,9 @@ public:
 private:
 	Window m_window;
 	bool m_isBallOutside;
-	sf::CircleShape m_ball;
+	sf::Texture m_ballTexture;
+	sf::Sprite m_ballSprite;
+	sf::RectangleShape m_ball;
 	sf::Vector2f m_ballPosition;
 	float m_ballSpeed;
 	bool isStarted;

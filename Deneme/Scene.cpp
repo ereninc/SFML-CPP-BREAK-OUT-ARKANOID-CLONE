@@ -96,13 +96,26 @@ void Scene::CheckCollisions()
 	}
 
 	//ball - bricks carpisma
-	for (int i = 0; i < bricks.size(); i++)
+	
+	/*for (int i = 0; i < bricks.size(); i++)
 	{
 		if (m_ball.GetBall().getGlobalBounds().intersects(bricks[i].GetBrick().getGlobalBounds()))
 		{
 			//std::cout << "Touched " << i << ". brick!" << std::endl;
 			bricks.erase(bricks.begin() + i);
 			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+		}
+	}*/
+
+	for (int i = 0; i < bricks.size(); i++)
+	{
+		sf::FloatRect ballBounds = m_ball.GetBall().getGlobalBounds();
+		sf::FloatRect brickBounds = bricks[i].GetBrick().getGlobalBounds();
+		if (brickBounds.intersects(ballBounds))
+		{
+			//std::cout << "Touched " << i << ". brick!" << std::endl;
+			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+			bricks.erase(bricks.begin() + i);
 		}
 	}
 }

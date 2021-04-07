@@ -11,4 +11,6 @@ public:
 	~Wall();
 private:
 	sf::RectangleShape m_wall;
+	sf::Texture m_wallTexture;
+	sf::Sprite m_wallSprite;
 };
