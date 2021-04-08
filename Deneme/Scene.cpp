@@ -26,25 +26,6 @@ void Scene::DrawScene(sf::RenderWindow& window)
 	m_player.DrawPlayer(window);
 	m_player.PlayerMovement();
 	CheckCollisions();
-
-#pragma region Grid
-	/*sf::Vector2f pos;
-	for (int line = 0; line < m_lineCount; line++)
-	{
-		pos.x = 0;
-		pos.y = line * m_cellSize;
-		m_lineCell.setPosition(pos);
-		window.draw(m_lineCell);
-	}
-	for (int column = 0; column < m_columnCount; column++)
-	{
-		pos.x = column * m_cellSize;
-		pos.y = 0;
-		m_columnCell.setPosition(pos);
-		window.draw(m_columnCell);
-	}*/
-#pragma endregion
-
 }
 
 void Scene::SpawnBricks()
@@ -104,37 +85,37 @@ void Scene::CheckCollisions()
 			m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
 		{
 			//std::cout << "brick ile carpisti" << std::endl;
-			/*m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
-			m_ball.m_ballSpeedVec.x *= -1; 
-			m_ball.m_ballSpeedVec.y *= -1;
+			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
+			/*m_ball.m_ballSpeedVec.x *= -1; 
+			m_ball.m_ballSpeedVec.y *= -1;*/
 			bricks.erase(bricks.begin() + i);
 		}
 		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && 
 			m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
 		{
-			/*m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
-			m_ball.m_ballSpeedVec.x *= -1;
-			m_ball.m_ballSpeedVec.y *= -1;
+			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
+			/*m_ball.m_ballSpeedVec.x *= -1;
+			m_ball.m_ballSpeedVec.y *= -1;*/
 			bricks.erase(bricks.begin() + i);
 		}
 		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && 
 			m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
 		{
-			/*m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
-			m_ball.m_ballSpeedVec.x *= 1;
-			m_ball.m_ballSpeedVec.y *= -1;
+			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
+			/*m_ball.m_ballSpeedVec.x *= 1;
+			m_ball.m_ballSpeedVec.y *= -1;*/
 			bricks.erase(bricks.begin() + i);
 		}
 		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && 
 			m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
 		{
-			/*m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
-			m_ball.m_ballSpeedVec.x *= 1;
-			m_ball.m_ballSpeedVec.y *= -1;
+			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
+			/*m_ball.m_ballSpeedVec.x *= 1;
+			m_ball.m_ballSpeedVec.y *= -1;*/
 			bricks.erase(bricks.begin() + i);
 		}
 	}

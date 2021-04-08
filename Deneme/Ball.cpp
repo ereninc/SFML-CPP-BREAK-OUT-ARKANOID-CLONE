@@ -28,7 +28,7 @@ void Ball::Random()
 {
 	srand(time(NULL));
 	int a = rand() % 6 + 1;
-	std::cout << "Ball rnd : " << a << std::endl;
+	std::cout << "Ball Texture Random : " << a << std::endl;
 	if (a == 1) fileName2 = "resimler/ball_blue.png";
 	if (a == 2) fileName2 = "resimler/ball_green.png";
 	if (a == 3) fileName2 = "resimler/ball_orange.png";

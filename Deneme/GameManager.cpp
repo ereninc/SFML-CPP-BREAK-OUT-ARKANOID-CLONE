@@ -12,7 +12,7 @@ GameManager::GameManager()
 	m_cellSize = 20.0f;
 	m_scene.CreateScene();
 	m_frameRate = 1.0f / 60.0f;
-	MenuSet();	
+	MenuSet();
 }
 
 GameManager::~GameManager()
