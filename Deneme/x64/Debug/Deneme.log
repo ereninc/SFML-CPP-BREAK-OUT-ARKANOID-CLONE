@@ -1,24 +1,73 @@
-﻿  Brick.cpp
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(14,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(15,68): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+﻿  Ball.cpp
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Ball.cpp(15,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Ball.cpp(16,65): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(15,60): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Ball.cpp(16,57): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(15,52): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Ball.cpp(16,50): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(15,44): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Ball.cpp(16,43): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(31,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Ball.cpp(31,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Brick.cpp
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(29,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Button.cpp
+  GameManager.cpp
+  main.cpp
+  Player.cpp
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Player.cpp(13,35): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Player.cpp(14,68): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Player.cpp(14,60): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Player.cpp(14,52): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Player.cpp(14,45): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Player.cpp(28,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Scene.cpp
+  Wall.cpp
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Wall.cpp(20,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Wall.cpp(27,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Window.cpp
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(42,12): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(43,12): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(46,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(46,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(48,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(48,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(58,12): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(59,12): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(62,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(62,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(74,12): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(75,12): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(78,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Window.cpp(78,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  WindowInterface.cpp
+  Generating Code...
   Deneme.vcxproj -> C:\Users\ASUS\Desktop\SFML Programming\Dependencies\bin\Deneme.exe

@@ -6,6 +6,7 @@ class Wall
 public:
 	Wall(float x = 0.0f, float y = 0.0f);
 	void InitWall();
+	void Random();
 	void DrawWall(sf::RenderWindow& window);
 	sf::RectangleShape GetWall();
 	~Wall();
