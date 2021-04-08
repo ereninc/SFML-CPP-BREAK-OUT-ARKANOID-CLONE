@@ -11,13 +11,12 @@ public:
 	void DrawPlayer(sf::RenderWindow& window);
 	void PlayerMovement();
 	void BorderCheck();
-	sf::RectangleShape GetPlayer();
+	sf::Sprite GetPlayer();
 	sf::Vector2f GetPosition();
 	~Player();
 private:
 	Window m_window;
 	float m_playerSpeed = 0.0f;
 	sf::Texture m_playerTexture;
-	sf::Sprite m_playerSprite;
-	sf::RectangleShape m_playerShape;
+	sf::Sprite m_playerShapeSprite;
 };

@@ -11,7 +11,7 @@ public:
 	void Random();
 	void DrawBall(sf::RenderWindow& window);
 	void MovementControl();
-	sf::RectangleShape GetBall();
+	sf::Sprite GetBall();
 	void ClampBorders();
 	bool IsBallOutside() const;
 	sf::Vector2f m_ballSpeedVec;
@@ -21,7 +21,6 @@ private:
 	bool m_isBallOutside;
 	sf::Texture m_ballTexture;
 	sf::Sprite m_ballSprite;
-	sf::RectangleShape m_ball;
 	sf::Vector2f m_ballPosition;
 	float m_ballSpeed;
 	bool isStarted;
