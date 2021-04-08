@@ -91,39 +91,50 @@ void Scene::CheckCollisions()
 	//player - ball carpisma
 	if (m_player.GetPlayer().getGlobalBounds().intersects(m_ball.GetBall().getGlobalBounds()))
 	{
-		std::cout << "Touched player!" << std::endl;
+		std::cout << "top player'a dokundu!" << std::endl;
 		m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
 	}
 
 	//ball - bricks carpisma
-
 	for (int i = 0; i < bricks.size(); i++)
 	{
 		sf::FloatRect ballBounds = m_ball.GetBall().getGlobalBounds();
 		sf::FloatRect brickBounds = bricks[i].GetBrick().getGlobalBounds();
-		if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
+		if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && 
+			m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
 		{
-			//std::cout << "Touched " << i << ". brick!" << std::endl;
-			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
+			//std::cout << "brick ile carpisti" << std::endl;
+			/*m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
+			m_ball.m_ballSpeedVec.x *= -1; 
+			m_ball.m_ballSpeedVec.y *= -1;
 			bricks.erase(bricks.begin() + i);
 		}
-		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
+		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && 
+			m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
 		{
-			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
+			/*m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
+			m_ball.m_ballSpeedVec.x *= -1;
+			m_ball.m_ballSpeedVec.y *= -1;
 			bricks.erase(bricks.begin() + i);
 		}
-		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
+		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && 
+			m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x)
 		{
-			m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
+			/*m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
+			m_ball.m_ballSpeedVec.x *= 1;
+			m_ball.m_ballSpeedVec.y *= -1;
 			bricks.erase(bricks.begin() + i);
 		}
-		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
+		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && 
+			m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x)
 		{
-			m_ball.m_ballSpeedVec.x = -abs(m_ball.m_ballSpeedVec.x);
-			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
+			/*m_ball.m_ballSpeedVec.x = abs(m_ball.m_ballSpeedVec.x);
+			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);*/
+			m_ball.m_ballSpeedVec.x *= 1;
+			m_ball.m_ballSpeedVec.y *= -1;
 			bricks.erase(bricks.begin() + i);
 		}
 	}
