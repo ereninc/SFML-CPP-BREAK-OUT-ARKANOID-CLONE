@@ -11,6 +11,7 @@ public:
 	void LoadTextures();
 	void BrickDraw(sf::RenderWindow& window);
 	int GetHealth();
+	void GetDamage();
 	sf::RectangleShape GetBrick();
 	~Brick();
 private:

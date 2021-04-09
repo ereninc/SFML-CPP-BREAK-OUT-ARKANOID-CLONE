@@ -20,8 +20,8 @@ void Ball::SetBall()
 		m_ballSprite.setScale(.05, .05);
 		m_ballSprite.setTextureRect(sf::IntRect(79.0f, 79.0f, 370.0f, 380.0f));
 	}
-	m_ballSpeedVec = { 5.7f, 5.7f };
-	m_ballSprite.setPosition(sf::Vector2f(400.0f, 740.0f));
+	m_ballSpeedVec = { 6.0f, 6.0f };
+	m_ballSprite.setPosition(sf::Vector2f(240.0f, 740.0f));
 }
 
 void Ball::Random()
@@ -42,7 +42,8 @@ void Ball::DrawBall(sf::RenderWindow& window)
 	if (isStarted)
 	{
 		window.draw(m_ballSprite);
-		window.setTitle("BREAK OUT : WILD HUNT       -       FPS: 60 (VSYNC ON)");
+		if (!m_isBallOutside) window.setTitle("BREAK OUT : WILD HUNT       -       FPS: 60 (VSYNC ON)");
+		else if (m_isBallOutside) window.setTitle("*GAME OVER* PRESS SPACE TO RESPAWN");
 		m_isBallOutside = false;
 		ClampBorders();
 		IsBallOutside();
@@ -54,6 +55,17 @@ void Ball::MovementControl()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) ||
 		sf::Keyboard::isKeyPressed(sf::Keyboard::Left) ||
 		sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) isStarted = true;
+
+	if (m_isBallOutside)
+	{
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) 
+		{
+			m_ballSprite.setPosition(sf::Vector2f(300.0f, 700.0f));
+			m_ballSpeedVec = { 6.0f, 6.0f };
+			m_isBallOutside = false;
+		}
+	}
 }
 
 sf::Sprite Ball::GetBall()
@@ -71,7 +83,11 @@ void Ball::ClampBorders()
 	if (ballPos.x <= 40) m_ballSpeedVec.x = -abs(m_ballSpeedVec.x);
 	if (ballPos.x >= screenSize.x - 45) m_ballSpeedVec.x = abs(m_ballSpeedVec.x);
 	if (ballPos.y <= 40) m_ballSpeedVec.y = -abs(m_ballSpeedVec.y);
-	if (ballPos.y >= screenSize.y) m_isBallOutside = true;
+	if (ballPos.y >= screenSize.y) 
+	{
+		m_isBallOutside = true;
+		std::cout << "GAME OVER - PRESS SPACE TO RESPAWN!" << std::endl;
+	}
 }
 
 bool Ball::IsBallOutside() const

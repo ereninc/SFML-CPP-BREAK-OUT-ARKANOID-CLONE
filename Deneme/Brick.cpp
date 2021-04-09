@@ -65,6 +65,12 @@ int Brick::GetHealth()
 	return m_health;
 }
 
+void Brick::GetDamage()
+{
+	m_health -= 1;
+	m_brick.setFillColor(sf::Color::Black);
+}
+
 sf::RectangleShape Brick::GetBrick()
 {
 	return sf::RectangleShape(m_brick);

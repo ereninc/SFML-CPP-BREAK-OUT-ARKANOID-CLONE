@@ -5,7 +5,7 @@
 class Player 
 {
 public:
-	Player(float x = 400.0f, float y = 760.0f);
+	Player(float x = 240.0f, float y = 760.0f);
 	void Init();
 	void Random();
 	void DrawPlayer(sf::RenderWindow& window);
