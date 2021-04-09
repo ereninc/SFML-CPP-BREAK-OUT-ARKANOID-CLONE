@@ -1,7 +1,6 @@
 #pragma once
 #include<vector>
 #include<SFML/Graphics.hpp>
-#include<SFML/System.hpp>
 #include "Brick.hpp"
 #include "Player.hpp"
 #include "Ball.hpp"

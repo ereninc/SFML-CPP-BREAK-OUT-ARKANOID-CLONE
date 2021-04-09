@@ -3,9 +3,10 @@
 #include <iostream>
 
 sf::Font font;
-
+std::string brickBlue = "";
 GameManager::GameManager()
 {
+	std::cout << "Baslamak icin SPACE tusuna basin\nHareket etmek icin SAG VE SOL YON TUSLARINA basin\nYeniden dogmak icin SPACE tusuna basin" << std::endl;
 	m_isClosed = false;
 	m_isNewGameClicked = false;
 	auto size = m_window.getWindow().getSize();
@@ -13,6 +14,20 @@ GameManager::GameManager()
 	m_scene.CreateScene();
 	m_frameRate = 1.0f / 60.0f;
 	MenuSet();
+}
+
+void GameManager::ImportTextures()
+{
+	m_textureManager.LoadTextures("brickBlue", "resimle/Bricks/brick_blue_small.png");
+	m_textureManager.LoadTextures("brickGreen", "resimle/Bricks/brick_green_small.png");
+	m_textureManager.LoadTextures("brickPink", "resimle/Bricks/brick_pink_small.png");
+	m_textureManager.LoadTextures("brickViolet", "resimle/Bricks/brick_violet_small.png");
+	m_textureManager.LoadTextures("brickYellow", "resimle/Bricks/brick_yellow_small.png");
+}
+
+sf::Texture GameManager::GetBrickTexture(std::string random)
+{
+	return sf::Texture(m_textureManager.GetRef("brickBlue"));
 }
 
 GameManager::~GameManager()

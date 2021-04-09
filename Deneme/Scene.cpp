@@ -32,9 +32,11 @@ void Scene::SpawnBricks()
 {
 	float xOffset = 20.0f;
 	float yOffset = 0.0f;
-	for (int x = 0; x < 6; x++)
+	int line = 6;
+	int column = 10;
+	for (int x = 0; x < line; x++)
 	{
-		for (int y = 0; y < 15; y++)
+		for (int y = 0; y < column; y++)
 		{
 			auto brickPos = m_brick.GetBrick().getPosition();
 			bricks.push_back(Brick(brickPos.x + (15 * 6 * x) + 35.f, brickPos.y + (30 * y) + 40.0f));
@@ -72,7 +74,7 @@ void Scene::CheckCollisions()
 	//player - ball carpisma
 	if (m_player.GetPlayer().getGlobalBounds().intersects(m_ball.GetBall().getGlobalBounds()))
 	{
-		std::cout << "top player'a dokundu!" << std::endl;
+		//std::cout << "top player'a dokundu!" << std::endl;
 		m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
 	}
 
