@@ -1,6 +1,7 @@
 #include "Brick.hpp"
 #include "Scene.hpp"
 #include <iostream>
+#include <memory>
 
 std::string fileName3 = "";
 Brick::Brick(float x, float y)
@@ -9,7 +10,7 @@ Brick::Brick(float x, float y)
 	Random();
 
 	//1. yol
-	/*if (!m_brickTexture.loadFromFile(fileName3)) {
+	/*if (m_brickTexture.loadFromFile(fileName3)) {
 		m_brickSprite.setTexture(m_brickTexture);
 		m_brickSprite.setScale(.35, .2);
 		m_brickSprite.setTextureRect(sf::IntRect(140.0f, 178.0f, 234.0f, 104.0f));

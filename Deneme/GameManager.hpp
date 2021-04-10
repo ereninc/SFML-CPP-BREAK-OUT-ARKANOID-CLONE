@@ -8,8 +8,7 @@ class GameManager
 {
 public:
 	GameManager();
-	void ImportTextures();
-	sf::Texture GetBrickTexture(std::string random);
+	sf::Texture GetRandomBrickTexture();
 	~GameManager();
 	void InputControl();
 	void UpdateScene();

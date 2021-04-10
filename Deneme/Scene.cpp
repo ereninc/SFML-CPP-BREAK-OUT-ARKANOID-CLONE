@@ -33,7 +33,7 @@ void Scene::SpawnBricks()
 	float xOffset = 20.0f;
 	float yOffset = 0.0f;
 	int line = 6;
-	int column = 10;
+	int column = 15;
 	for (int x = 0; x < line; x++)
 	{
 		for (int y = 0; y < column; y++)
