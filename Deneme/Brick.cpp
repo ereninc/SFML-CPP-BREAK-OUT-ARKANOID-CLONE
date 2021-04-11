@@ -35,14 +35,14 @@ void Brick::InitBrick()
 }
 
 
-void Brick::LoadTextures()
+/*void Brick::LoadTextures()
 {
-	m_texmgr.LoadTextures("brickBlue", "resimler/brick_blue_small.png");
-	m_texmgr.LoadTextures("brickGreen", "resimler/brick_green_small.png");
-	m_texmgr.LoadTextures("brickPink", "resimler/brick_pink_small.png");
-	m_texmgr.LoadTextures("brickViolet", "resimler/brick_violet_small.png");
-	m_texmgr.LoadTextures("brickYellow", "resimler/brick_yellow_small.png");
-}
+	m_texmgr.LoadTextures("brickBlue", "resimler/Bricks/brick_blue_small.png");
+	m_texmgr.LoadTextures("brickGreen","resimler/Bricks/brick_green_small.png");
+	m_texmgr.LoadTextures("brickPink", "resimler/Bricks/brick_pink_small.png");
+	m_texmgr.LoadTextures("brickViolet", "resimler/Bricks/brick_violet_small.png");
+	m_texmgr.LoadTextures("brickYellow", "resimler/Bricks/brick_yellow_small.png");
+}*/
 
 void Brick::Random()
 {
