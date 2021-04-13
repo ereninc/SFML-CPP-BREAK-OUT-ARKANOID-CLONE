@@ -4,12 +4,14 @@
 #include <memory>
 #include "TextureManager.hpp"
 
+//texture sorununu sadece singleton ile çözebildim
 TextureManager tex;
 sf::Texture brickTexture;
 sf::Texture brickDamagedTexture;
+
 Brick::Brick(float x, float y)
 {
-	tex.Random();
+	tex.RandomBrick();
 	tex.ImportTextures();
 	brickTexture = tex.GetRandomBrickTexture();
 	brickDamagedTexture = tex.GetDamagedBrickTexture();

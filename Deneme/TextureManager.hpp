@@ -9,8 +9,8 @@ public:
 	TextureManager();
 	sf::Texture textureBrick;
 	sf::Texture textureDamagedBrick;
-	std::string Random();
-	std::string RandomDamaged();
+	std::string RandomBrick();
+	std::string DamagedBrick();
 	void ImportTextures();
 	sf::Texture GetRandomBrickTexture();
 	sf::Texture GetDamagedBrickTexture();

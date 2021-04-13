@@ -7,8 +7,6 @@ class Brick
 public:
 	Brick(float x = 0.0f, float y = 0.0f);
 	void InitBrick();
-	/*void Random();
-	void LoadTextures();*/
 	void BrickDraw(sf::RenderWindow& window);
 	int GetHealth();
 	void GetDamage();

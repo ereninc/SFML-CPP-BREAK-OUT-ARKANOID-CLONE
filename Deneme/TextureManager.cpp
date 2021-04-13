@@ -23,7 +23,7 @@ TextureManager::TextureManager()
 {
 }
 
-std::string TextureManager::Random()
+std::string TextureManager::RandomBrick()
 {
 	srand(time(NULL));
 	random = rand() % 5 + 1;
@@ -34,7 +34,7 @@ std::string TextureManager::Random()
 	if (random == 5) return yellowBrick;
 }
 
-std::string TextureManager::RandomDamaged()
+std::string TextureManager::DamagedBrick()
 {	
 	if (random == 1) return blueDBrick;
 	if (random == 2) return greenDBrick;
@@ -45,8 +45,8 @@ std::string TextureManager::RandomDamaged()
 
 void TextureManager::ImportTextures()
 {
-	textureBrick.loadFromFile(Random());
-	textureDamagedBrick.loadFromFile(RandomDamaged());
+	textureBrick.loadFromFile(RandomBrick());
+	textureDamagedBrick.loadFromFile(DamagedBrick());
 }
 
 sf::Texture TextureManager::GetRandomBrickTexture()
