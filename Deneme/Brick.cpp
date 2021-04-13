@@ -1,7 +1,6 @@
 #include "Brick.hpp"
 #include "Scene.hpp"
 #include <iostream>
-#include <memory>
 #include "TextureManager.hpp"
 
 //texture sorununu sadece singleton ile çözebildim

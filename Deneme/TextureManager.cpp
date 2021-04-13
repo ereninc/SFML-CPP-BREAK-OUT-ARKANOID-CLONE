@@ -17,6 +17,11 @@ std::string greenDBrick = "resimler/Bricks/brick_green_small_cracked.png";
 std::string pinkDBrick = "resimler/Bricks/brick_pink_small_try.png";
 std::string violetDBrick = "resimler/Bricks/brick_violet_small_cracked.png";
 std::string yellowDBrick = "resimler/Bricks/brick_yellow_small_cracked.png";
+//Walls
+std::string greenWall = "resimler/Walls/brick.png";
+std::string blueWall = "resimler/Walls/brick_blue.png";
+std::string pinkWall = "resimler/Walls/brick_pink_side.png";
+std::string redWall = "resimler/Walls/brick_red.png";
 
 
 TextureManager::TextureManager()
@@ -43,10 +48,21 @@ std::string TextureManager::DamagedBrick()
 	if (random == 5) return yellowDBrick;
 }
 
+std::string TextureManager::RandomWall()
+{
+	srand(time(NULL));
+	int randomWall = rand() % 4 + 1;
+	if (randomWall == 1) return greenWall;
+	if (randomWall == 2) return blueWall;
+	if (randomWall == 3) return pinkWall;
+	if (randomWall == 4) return redWall;
+}
+
 void TextureManager::ImportTextures()
 {
 	textureBrick.loadFromFile(RandomBrick());
 	textureDamagedBrick.loadFromFile(DamagedBrick());
+	textureWall.loadFromFile(RandomWall());
 }
 
 sf::Texture TextureManager::GetRandomBrickTexture()
@@ -57,6 +73,11 @@ sf::Texture TextureManager::GetRandomBrickTexture()
 sf::Texture TextureManager::GetDamagedBrickTexture()
 {
 	return sf::Texture(textureDamagedBrick);
+}
+
+sf::Texture TextureManager::GetWall()
+{
+	return sf::Texture(textureWall);
 }
 
 

@@ -1,5 +1,7 @@
 ﻿  TextureManager.cpp
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(28,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(44): warning C4715: 'TextureManager::DamagedBrick': not all control paths return a value
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(35): warning C4715: 'TextureManager::RandomBrick': not all control paths return a value
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(33,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(53,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(59): warning C4715: 'TextureManager::RandomWall': not all control paths return a value
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(49): warning C4715: 'TextureManager::DamagedBrick': not all control paths return a value
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(40): warning C4715: 'TextureManager::RandomBrick': not all control paths return a value
   Deneme.vcxproj -> C:\Users\ASUS\Desktop\SFML Programming\Dependencies\bin\Deneme.exe
