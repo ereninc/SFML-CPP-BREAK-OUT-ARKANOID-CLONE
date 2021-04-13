@@ -3,40 +3,50 @@
 #include <string>
 #include <map>
 
+
+int random;
+//Bricks-stage 1
 std::string blueBrick = "resimler/Bricks/brick_blue_small.png";
 std::string greenBrick = "resimler/Bricks/brick_green_small.png";
 std::string pinkBrick = "resimler/Bricks/brick_pink_small.png";
 std::string violetBrick = "resimler/Bricks/brick_violet_small.png";
 std::string yellowBrick = "resimler/Bricks/brick_yellow_small.png";
+//Damaged Bricks-stage 2
+std::string blueDBrick = "resimler/Bricks/brick_blue_small_cracked.png";
+std::string greenDBrick = "resimler/Bricks/brick_green_small_cracked.png";
+std::string pinkDBrick = "resimler/Bricks/brick_pink_small_try.png";
+std::string violetDBrick = "resimler/Bricks/brick_violet_small_cracked.png";
+std::string yellowDBrick = "resimler/Bricks/brick_yellow_small_cracked.png";
 
-/*
-void TextureManager::LoadTextures(const std::string& name, const std::string& filename)
+
+TextureManager::TextureManager()
 {
-	sf::Texture tex;
-	tex.loadFromFile(filename);
-	this->textures[name] = tex;
-	return;
 }
 
-sf::Texture& TextureManager::GetRef(const std::string& texture)
-{
-	return this->textures.at(texture);
-}
-*/
 std::string TextureManager::Random()
 {
-	//srand(time(NULL));
-	int random = rand() % 5 + 1;
+	srand(time(NULL));
+	random = rand() % 5 + 1;
 	if (random == 1) return blueBrick;
 	if (random == 2) return greenBrick;
 	if (random == 3) return pinkBrick;
 	if (random == 4) return violetBrick;
 	if (random == 5) return yellowBrick;
-
 }
+
+std::string TextureManager::RandomDamaged()
+{	
+	if (random == 1) return blueDBrick;
+	if (random == 2) return greenDBrick;
+	if (random == 3) return pinkDBrick;
+	if (random == 4) return violetDBrick;
+	if (random == 5) return yellowDBrick;
+}
+
 void TextureManager::ImportTextures()
 {
 	textureBrick.loadFromFile(Random());
+	textureDamagedBrick.loadFromFile(RandomDamaged());
 }
 
 sf::Texture TextureManager::GetRandomBrickTexture()
@@ -46,11 +56,9 @@ sf::Texture TextureManager::GetRandomBrickTexture()
 
 sf::Texture TextureManager::GetDamagedBrickTexture()
 {
-	return sf::Texture();
+	return sf::Texture(textureDamagedBrick);
 }
 
-TextureManager::TextureManager()
-{
-}
+
 
 

@@ -7,10 +7,10 @@ class TextureManager
 {
 public:
 	TextureManager();
-	/*void LoadTextures(const std::string& name, const std::string &filename);
-	sf::Texture& GetRef(const std::string& texture);*/
 	sf::Texture textureBrick;
+	sf::Texture textureDamagedBrick;
 	std::string Random();
+	std::string RandomDamaged();
 	void ImportTextures();
 	sf::Texture GetRandomBrickTexture();
 	sf::Texture GetDamagedBrickTexture();
