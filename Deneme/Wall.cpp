@@ -32,10 +32,10 @@ void Wall::InitWall()
 
 void Wall::LoadTextures()
 {
-	m_texmgr.LoadTextures("wallGreen", "resimler/brick.png");
+	/*m_texmgr.LoadTextures("wallGreen", "resimler/brick.png");
 	m_texmgr.LoadTextures("wallBlue", "resimler/brick_blue.png");
 	m_texmgr.LoadTextures("wallPink", "resimler/brick_pink_side.png");
-	m_texmgr.LoadTextures("wallRed", "resimler/brick_red.png");
+	m_texmgr.LoadTextures("wallRed", "resimler/brick_red.png");*/
 }
 
 void Wall::Random()

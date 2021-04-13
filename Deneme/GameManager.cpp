@@ -5,7 +5,6 @@
 sf::Font font;
 GameManager::GameManager()
 {
-	m_textureManager.ImportTextures();
 	std::cout << "Baslamak icin SPACE tusuna basin\nHareket etmek icin SAG VE SOL YON TUSLARINA basin\nYeniden dogmak icin SPACE tusuna basin" << std::endl;
 	m_isClosed = false;
 	m_isNewGameClicked = false;
@@ -14,11 +13,6 @@ GameManager::GameManager()
 	m_scene.CreateScene();
 	m_frameRate = 1.0f / 60.0f;
 	MenuSet();
-}
-
-sf::Texture GameManager::GetRandomBrickTexture()
-{
-	return sf::Texture(m_textureManager.GetBrickTexture());
 }
 
 GameManager::~GameManager()

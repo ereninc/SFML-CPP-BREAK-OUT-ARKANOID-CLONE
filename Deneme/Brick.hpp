@@ -7,17 +7,17 @@ class Brick
 public:
 	Brick(float x = 0.0f, float y = 0.0f);
 	void InitBrick();
-	void Random();
-	/*void LoadTextures();*/
+	/*void Random();
+	void LoadTextures();*/
 	void BrickDraw(sf::RenderWindow& window);
 	int GetHealth();
 	void GetDamage();
-	sf::RectangleShape GetBrick();
+	sf::Sprite GetBrick();
 	~Brick();
 private:
 	int m_health = 2;
 	TextureManager m_texmgr;
-	sf::RectangleShape m_brick;
+	sf::Sprite m_brick;
 	sf::Texture m_brickTexture;
 	sf::Sprite m_brickSprite;
 };

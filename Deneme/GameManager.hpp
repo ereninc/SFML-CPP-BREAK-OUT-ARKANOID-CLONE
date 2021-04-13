@@ -2,13 +2,11 @@
 #include "Window.hpp"
 #include "Button.hpp"
 #include "Scene.hpp"
-#include "TextureManager.hpp"
 
 class GameManager
 {
 public:
 	GameManager();
-	sf::Texture GetRandomBrickTexture();
 	~GameManager();
 	void InputControl();
 	void UpdateScene();
@@ -24,7 +22,6 @@ public:
 	float m_cellSize;
 private:
 	Window m_window;
-	TextureManager m_textureManager;
 	bool m_isClosed;
 	bool m_isNewGameClicked;
 	sf::Clock m_clock;

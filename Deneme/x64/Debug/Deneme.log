@@ -1,3 +1,51 @@
 ﻿  Brick.cpp
-C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(49,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(34,26): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(35,61): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(35,53): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(35,45): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(35,37): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(75,26): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(76,61): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(76,53): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(76,45): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\Brick.cpp(76,37): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  GameManager.cpp
+  Scene.cpp
+  TextureManager.cpp
+  Wall.cpp
+  main.cpp
+  Generating Code...
+C:\Users\ASUS\Desktop\SFML Programming\deneme1\Deneme\TextureManager.cpp(36): warning C4715: 'TextureManager::Random': not all control paths return a value
   Deneme.vcxproj -> C:\Users\ASUS\Desktop\SFML Programming\Dependencies\bin\Deneme.exe

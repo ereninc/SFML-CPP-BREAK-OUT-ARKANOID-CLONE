@@ -3,10 +3,13 @@
 #include <string>
 #include <map>
 
-TextureManager::TextureManager() 
-{
-}
+std::string blueBrick = "resimler/Bricks/brick_blue_small.png";
+std::string greenBrick = "resimler/Bricks/brick_green_small.png";
+std::string pinkBrick = "resimler/Bricks/brick_pink_small.png";
+std::string violetBrick = "resimler/Bricks/brick_violet_small.png";
+std::string yellowBrick = "resimler/Bricks/brick_yellow_small.png";
 
+/*
 void TextureManager::LoadTextures(const std::string& name, const std::string& filename)
 {
 	sf::Texture tex;
@@ -19,19 +22,35 @@ sf::Texture& TextureManager::GetRef(const std::string& texture)
 {
 	return this->textures.at(texture);
 }
+*/
+std::string TextureManager::Random()
+{
+	//srand(time(NULL));
+	int random = rand() % 5 + 1;
+	if (random == 1) return blueBrick;
+	if (random == 2) return greenBrick;
+	if (random == 3) return pinkBrick;
+	if (random == 4) return violetBrick;
+	if (random == 5) return yellowBrick;
 
+}
 void TextureManager::ImportTextures()
 {
-	t1.loadFromFile("resimler/Bricks/brick_blue_small.png");
-	t2.loadFromFile("resimler/Bricks/brick_green_small.png");
-	t3.loadFromFile("resimler/Bricks/brick_pink_small.png");
-	t4.loadFromFile("resimler/Bricks/brick_violet_small.png");
-	t5.loadFromFile("resimler/Bricks/brick_yellow_small.png");
+	textureBrick.loadFromFile(Random());
 }
 
-sf::Texture TextureManager::GetBrickTexture()
+sf::Texture TextureManager::GetRandomBrickTexture()
 {
-	return sf::Texture(t1);
+	return sf::Texture(textureBrick);
+}
+
+sf::Texture TextureManager::GetDamagedBrickTexture()
+{
+	return sf::Texture();
+}
+
+TextureManager::TextureManager()
+{
 }
 
 
