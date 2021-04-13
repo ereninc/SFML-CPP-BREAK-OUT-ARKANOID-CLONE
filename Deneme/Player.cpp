@@ -24,6 +24,7 @@ void Player::Random()
 {
 	srand(time(NULL));
 	int a = rand() % 5 + 1;
+	std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << std::endl;
 	std::cout << "Player Texture Random : " << a << std::endl;
 	if (a == 1) fileName = "resimler/Bats/bat_black.png";
 	if (a == 2) fileName = "resimler/Bats/bat_blue.png";

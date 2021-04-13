@@ -1,6 +1,5 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "TextureManager.hpp"
 
 class Brick 
 {
@@ -14,7 +13,6 @@ public:
 	~Brick();
 private:
 	int m_health = 2;
-	TextureManager m_texmgr;
 	sf::Sprite m_brick;
 	sf::Texture m_brickTexture;
 	sf::Sprite m_brickSprite;

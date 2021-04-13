@@ -6,6 +6,7 @@ sf::Font font;
 GameManager::GameManager()
 {
 	std::cout << "Baslamak icin SPACE tusuna basin\nHareket etmek icin SAG VE SOL YON TUSLARINA basin\nYeniden dogmak icin SPACE tusuna basin" << std::endl;
+	
 	m_isClosed = false;
 	m_isNewGameClicked = false;
 	auto size = m_window.getWindow().getSize();
