@@ -148,7 +148,6 @@
   <ItemGroup>
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Brick.cpp" />
-    <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -156,20 +155,16 @@
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Wall.cpp" />
     <ClCompile Include="Window.cpp" />
-    <ClCompile Include="WindowInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.hpp" />
     <ClInclude Include="Brick.hpp" />
-    <ClInclude Include="Button.hpp" />
-    <ClInclude Include="EventHandler.hpp" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="TextureManager.hpp" />
     <ClInclude Include="Wall.hpp" />
     <ClInclude Include="Window.hpp" />
-    <ClInclude Include="WindowInterface.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
