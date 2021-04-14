@@ -1,7 +1,6 @@
 #include "GameManager.hpp"
 #include <iostream>
 
-sf::Font font;
 GameManager::GameManager()
 {
 	m_isClosed = false;
@@ -41,14 +40,7 @@ void GameManager::UpdateScene()
 void GameManager::DrawScene()
 {
 	m_window.StartDrawing();
-	//if (m_isNewGameClicked)
-	{
-		m_scene.DrawScene(m_window.getWindow());
-	}
-	//else
-	{
-		//MenuDraw();
-	}
+	m_scene.DrawScene(m_window.getWindow());
 	m_window.EndDrawing();
 }
 

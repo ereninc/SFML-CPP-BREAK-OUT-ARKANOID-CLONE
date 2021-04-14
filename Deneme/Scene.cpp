@@ -92,6 +92,7 @@ void Scene::CheckCollisions()
 			m_ball.m_ballSpeedVec.y = abs(m_ball.m_ballSpeedVec.y);
 			bricks[i].GetDamage();
 			if (bricks[i].GetHealth() == 0) bricks.erase(bricks.begin() + i);
+			return;
 		}
 		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y < bricks[i].GetBrick().getPosition().y && 
 			m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x + 40.0f)
@@ -100,6 +101,7 @@ void Scene::CheckCollisions()
 			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
 			bricks[i].GetDamage();
 			if (bricks[i].GetHealth() == 0) bricks.erase(bricks.begin() + i);
+			return;
 		}
 		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && 
 			m_ball.GetBall().getPosition().x > bricks[i].GetBrick().getPosition().x + 40.0f)
@@ -108,6 +110,7 @@ void Scene::CheckCollisions()
 			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
 			bricks[i].GetDamage();
 			if (bricks[i].GetHealth() == 0) bricks.erase(bricks.begin() + i);
+			return;
 		}
 		else if (brickBounds.intersects(ballBounds) && m_ball.GetBall().getPosition().y > bricks[i].GetBrick().getPosition().y && 
 			m_ball.GetBall().getPosition().x < bricks[i].GetBrick().getPosition().x + 40.0f)
@@ -116,6 +119,7 @@ void Scene::CheckCollisions()
 			m_ball.m_ballSpeedVec.y = -abs(m_ball.m_ballSpeedVec.y);
 			bricks[i].GetDamage();
 			if (bricks[i].GetHealth() == 0) bricks.erase(bricks.begin() + i);
+			return;
 		}
 	}
 }
