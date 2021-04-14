@@ -9,6 +9,7 @@ void Scene::CreateScene()
 {
 	SpawnBricks();
 	DrawWalls();
+	std::cout << "----------------------------------------------------------------------\nBaslamak icin SPACE tusuna basin\nHareket etmek icin SAG VE SOL YON TUSLARINA basin\nYeniden dogmak icin SPACE tusuna basin" << std::endl;
 }
 
 void Scene::DrawScene(sf::RenderWindow& window)

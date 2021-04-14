@@ -1,6 +1,5 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "TextureManager.hpp"
 
 class Wall
 {
@@ -11,8 +10,6 @@ public:
 	sf::Sprite GetWall();
 	~Wall();
 private:
-	TextureManager m_texmgr;
 	sf::Sprite m_wall;
 	sf::Texture m_wallTexture;
-	sf::Sprite m_wallSprite;
 };

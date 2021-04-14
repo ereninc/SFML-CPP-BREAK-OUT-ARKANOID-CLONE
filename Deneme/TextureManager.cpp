@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <map>
+#include <iostream>
 
 
 int random;
@@ -23,7 +24,6 @@ std::string blueWall = "resimler/Walls/brick_blue.png";
 std::string pinkWall = "resimler/Walls/brick_pink_side.png";
 std::string redWall = "resimler/Walls/brick_red.png";
 
-
 TextureManager::TextureManager()
 {
 }
@@ -32,6 +32,7 @@ std::string TextureManager::RandomBrick()
 {
 	srand(time(NULL));
 	random = rand() % 5 + 1;
+	std::cout << "Brick Texture Random : " << random << std::endl;
 	if (random == 1) return blueBrick;
 	if (random == 2) return greenBrick;
 	if (random == 3) return pinkBrick;
@@ -52,6 +53,7 @@ std::string TextureManager::RandomWall()
 {
 	srand(time(NULL));
 	int randomWall = rand() % 4 + 1;
+	std::cout << "Wall Texture Random : " << randomWall << std::endl;
 	if (randomWall == 1) return greenWall;
 	if (randomWall == 2) return blueWall;
 	if (randomWall == 3) return pinkWall;
@@ -79,7 +81,3 @@ sf::Texture TextureManager::GetWall()
 {
 	return sf::Texture(textureWall);
 }
-
-
-
-

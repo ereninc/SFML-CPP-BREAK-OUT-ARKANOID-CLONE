@@ -3,7 +3,6 @@
 #include <iostream>
 #include "TextureManager.hpp"
 
-//texture sorununu sadece singleton ile çözebildim
 TextureManager tex;
 sf::Texture brickTexture;
 sf::Texture brickDamagedTexture;
@@ -35,6 +34,7 @@ int Brick::GetHealth()
 	return m_health;
 }
 
+//Texture change and -1 health
 void Brick::GetDamage()
 {
 	m_health -= 1;
