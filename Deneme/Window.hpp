@@ -15,7 +15,6 @@ public:
 	void EventControl();
 	void Draw(sf::Drawable& shape);
 	sf::RenderWindow& getWindow();
-	void AddMember(WindowInterface* newMember);
 private:
 	sf::RenderWindow m_sfmlWindow;
 	std::vector<WindowInterface*> m_memberList;

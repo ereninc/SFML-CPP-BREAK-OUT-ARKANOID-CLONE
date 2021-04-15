@@ -1,6 +1,5 @@
 #include "Window.hpp"
 #include <iostream>
-#include "WindowInterface.hpp"
 
 Window::Window()
 {
@@ -37,54 +36,6 @@ void Window::EventControl()
 		{
 			m_sfmlWindow.close();
 		}
-		if (event.type == sf::Event::MouseMoved)
-		{
-			float x = event.mouseMove.x;
-			float y = event.mouseMove.y;
-			for (auto next:m_memberList)
-			{
-				if (next->isOn(x, y))
-				{
-					next->MouseMove(x, y);
-				}
-				else
-				{
-					next->isNotOn();
-				}
-			}
-		} 
-		if (event.type == sf::Event::MouseButtonPressed)
-		{
-			float x = event.mouseButton.x;
-			float y = event.mouseButton.y;
-			for (auto next : m_memberList)
-			{
-				if (next->isOn(x, y))
-				{
-					next->MouseOnEnable(event.mouseButton);
-				}
-				else
-				{
-					next->isNotOn();
-				}
-			}
-		}
-		if (event.type == sf::Event::MouseButtonReleased)
-		{
-			float x = event.mouseButton.x;
-			float y = event.mouseButton.y;
-			for (auto next : m_memberList)
-			{
-				if (next->isOn(x, y))
-				{
-					next->MouseOnDisable(event.mouseButton);
-				}
-				else
-				{
-					next->isNotOn();
-				}
-			}
-		}
 	}
 }
 
@@ -96,9 +47,4 @@ void Window::Draw(sf::Drawable& shape)
 sf::RenderWindow& Window::getWindow()
 {
 	return m_sfmlWindow;
-}
-
-void Window::AddMember(WindowInterface* newMember)
-{
-	m_memberList.push_back(newMember);
 }

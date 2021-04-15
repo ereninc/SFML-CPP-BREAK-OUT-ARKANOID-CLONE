@@ -3,16 +3,15 @@
 #include <iostream>
 #include "TextureManager.hpp"
 
-TextureManager tex;
+TextureManager *tex = new TextureManager();
 sf::Texture brickTexture;
 sf::Texture brickDamagedTexture;
 
 Brick::Brick(float x, float y)
 {
-	tex.RandomBrick();
-	tex.ImportTextures();
-	brickTexture = tex.GetRandomBrickTexture();
-	brickDamagedTexture = tex.GetDamagedBrickTexture();
+	tex->ImportBrickTextures();
+	brickTexture = tex->GetRandomBrickTexture();
+	brickDamagedTexture = tex->GetDamagedBrickTexture();
 	m_brick.setPosition(x, y);
 	InitBrick();
 }

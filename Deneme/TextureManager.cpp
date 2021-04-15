@@ -4,8 +4,6 @@
 #include <map>
 #include <iostream>
 
-
-int random;
 //Bricks-stage 1
 std::string blueBrick = "resimler/Bricks/brick_blue_small.png";
 std::string greenBrick = "resimler/Bricks/brick_green_small.png";
@@ -26,44 +24,47 @@ std::string redWall = "resimler/Walls/brick_red.png";
 
 TextureManager::TextureManager()
 {
+	srand(time(NULL));
+	randomBrick = rand() % 5 + 1;
+	//std::cout << "Brick Texture Random : " << randomBrick << std::endl;
+	randomWall = rand() % 4 + 1;
+	//std::cout << "Wall Texture Random : " << randomWall << std::endl;
 }
 
 std::string TextureManager::RandomBrick()
 {
-	srand(time(NULL));
-	random = rand() % 5 + 1;
-	std::cout << "Brick Texture Random : " << random << std::endl;
-	if (random == 1) return blueBrick;
-	if (random == 2) return greenBrick;
-	if (random == 3) return pinkBrick;
-	if (random == 4) return violetBrick;
-	if (random == 5) return yellowBrick;
+	if (randomBrick == 1) return blueBrick;
+	if (randomBrick == 2) return greenBrick;
+	if (randomBrick == 3) return pinkBrick;
+	if (randomBrick == 4) return violetBrick;
+	if (randomBrick == 5) return yellowBrick;
 }
 
 std::string TextureManager::DamagedBrick()
 {	
-	if (random == 1) return blueDBrick;
-	if (random == 2) return greenDBrick;
-	if (random == 3) return pinkDBrick;
-	if (random == 4) return violetDBrick;
-	if (random == 5) return yellowDBrick;
+	if (randomBrick == 1) return blueDBrick;
+	if (randomBrick == 2) return greenDBrick;
+	if (randomBrick == 3) return pinkDBrick;
+	if (randomBrick == 4) return violetDBrick;
+	if (randomBrick == 5) return yellowDBrick;
 }
 
 std::string TextureManager::RandomWall()
 {
-	srand(time(NULL));
-	int randomWall = rand() % 4 + 1;
-	std::cout << "Wall Texture Random : " << randomWall << std::endl;
 	if (randomWall == 1) return greenWall;
 	if (randomWall == 2) return blueWall;
 	if (randomWall == 3) return pinkWall;
 	if (randomWall == 4) return redWall;
 }
 
-void TextureManager::ImportTextures()
+void TextureManager::ImportBrickTextures()
 {
 	textureBrick.loadFromFile(RandomBrick());
 	textureDamagedBrick.loadFromFile(DamagedBrick());
+}
+
+void TextureManager::ImportWallTextures()
+{
 	textureWall.loadFromFile(RandomWall());
 }
 
